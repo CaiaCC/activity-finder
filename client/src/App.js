@@ -1,38 +1,68 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: 'Click the button to load data!'
-    }
-  }
+export default function App() {
+  const [activities, setActivities] = useState([]);
 
-  fetchData = () => {
-    axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
+  useEffect(() => {
+    axios.get('api/activities')
+      .then(res => {
+        setActivities(res.data)
+        console.log(res.data)
+      })
+      .catch(res => console.log(res))
 
-      console.log(response.data.message) // Just the message
-      this.setState({
-        message: response.data.message
-      });
-    }) 
-  }
+  }, [])
 
-  render() {
+  const listActivity = activities.map( activity => {
     return (
-      <div className="App">
-        <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
-      </div>
-    );
-  }
+      <li
+        key={activity.id}
+      >
+        {activity.title}
+      </li>
+    )
+  })
+  
+  return (
+    <ul>
+      {listActivity}
+    </ul>
+  )
 }
 
-export default App;
+// class App extends Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = {
+//       message: 'Click the button to load data!'
+//     }
+//   }
+
+//   fetchData = () => {
+//     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
+//     .then((response) => {
+//       // handle success
+//       console.log(response.data) // The entire response from the Rails API
+
+//       console.log(response.data.message) // Just the message
+//       this.setState({
+//         message: response.data.message
+//       });
+//     }) 
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <h1>{ this.state.message }</h1>
+//         <button onClick={this.fetchData} >
+//           Fetch Data
+//         </button>        
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
