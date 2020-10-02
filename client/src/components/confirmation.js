@@ -28,8 +28,11 @@ function Confirmation(props) {
 
   const exception = (event) => {
     const spotsRemaining = maxPeople - peopleSelected;
-    if (peopleSelected == 0 || peopleSelected > maxPeople) {
+    const id = props.match.params.id;
+    if (peopleSelected === 0 || peopleSelected > maxPeople) {
       event.preventDefault();
+    } else {
+      axios.post(`/api/activities/${id}`)
     }
   }
 
