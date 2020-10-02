@@ -27,6 +27,7 @@ function Confirmation(props) {
   }, [])
 
   const exception = (event) => {
+    const spotsRemaining = maxPeople - peopleSelected;
     if (peopleSelected == 0 || peopleSelected > maxPeople) {
       event.preventDefault();
     }
