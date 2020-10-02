@@ -17,8 +17,15 @@
 
 #footer{
   padding: 10px !important;
+  margin-top: -40px;
+ 
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #17a2b8;
+}
+
+body{
+  margin-bottom: 100px;
+   clear: both;
 }
