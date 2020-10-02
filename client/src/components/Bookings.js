@@ -7,19 +7,22 @@ import useBookingData from '../hooks/useBookingData'
 
 import { Table, Button, Container, Badge } from 'react-bootstrap';
 
+import useBookingData from '../hooks/useBookingData'
+
 export default function Bookings() {
-  const { state, cancelBooking } = useBookingData();
-  const bookings = state.bookings;
-  const bookedActivities = state.bookedActivities;
-  
+  const { bookings, bookedActivities, cancelBooking } = useBookingData();
   
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
-    const bookingId = bookings.filter(obj => obj.activity_id === bookedActivityId)[0].id
-
-    function destroy(bookingId) {
+    const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
+    const spotReserved = booking.number_of_participants
+    const bookingId = booking.id
+    
+    const destroy = (event) => {
+      event.preventDefault();
+      
       cancelBooking(bookingId)
-      .then( console.log("booking cancelled"))
+      .then(console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
     }
     function getDate(){
@@ -38,10 +41,12 @@ export default function Bookings() {
         <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
         <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
+        <td>{spotReserved}</td>
+        <td>Status</td>
         <td>{bookedActivity.date}</td>
         <td>
           <Button variant="danger" 
-            onClick={() => destroy(bookingId)}
+            onClick={destroy}
           >
             Cancel
           </Button>
@@ -58,6 +63,7 @@ export default function Bookings() {
             <tr>
               <th>Activity Title</th>
               <th>Status</th>
+              <th>Spots Reserved</th>
               <th>Date</th>
               <th></th>
             </tr>

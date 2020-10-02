@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import "../css/favorites.css"
 import { Table, Button, Container, Badge, Alert } from 'react-bootstrap';
@@ -6,16 +7,16 @@ import { Table, Button, Container, Badge, Alert } from 'react-bootstrap';
 import useFavoriteData from '../hooks/useFavoriteData'
 
 export default function Favorites() {
-  const { state, cancelFavorite } = useFavoriteData();
-  const favorites = state.favorites;
-  const favoredActivities = state.favoredActivities;
-
-
+  const { favorites, favoredActivities, cancelFavorite } = useFavoriteData();
+ 
   const favoredItems = favoredActivities.map(favoredActivity => {
     const favoredActivityId = favoredActivity.id
     const favoriteId = favorites.filter(obj => obj.activity_id === favoredActivityId)[0].id
+    const bookingUrl = `/activities/${favoredActivityId}/confirmation`
+    
+    const destroy= (event)=> {
+      event.preventDefault();
 
-    function destroy(favoriteId) {
       cancelFavorite(favoriteId)
         .then(console.log("favorite cancelled"))
         .catch(err => console.log("favorite cancel err: ", err))
@@ -30,7 +31,7 @@ export default function Favorites() {
     }
 
     return (
-      <tr key={favoredActivity.id}>
+      <tr key={favoredActivityId}>
         <td>{favoredActivity.title}</td>
         {getDate() < favoredActivity.date ?
           <td><Badge variant="success">Upcoming</Badge>{' '}</td> :
@@ -39,16 +40,19 @@ export default function Favorites() {
         <td>{favoredActivity.max_number_of_participants}</td>
         <td>{favoredActivity.date}</td>
         <td>
-          <Button variant="warning">Join now</Button>{' '}
+          <Link to={bookingUrl}>
+            <Button variant="warning">Join now</Button>{' '}
+          </Link>
         </td>
         <td>
-          <Button variant="danger" onClick={() => destroy(favoriteId)}>
+          <Button variant="danger" onClick={destroy}>
             Delete
           </Button>
         </td>
       </tr>
     )
   })
+
   return (
     <>
       <Container className="list-box">
