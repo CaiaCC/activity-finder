@@ -41,34 +41,37 @@ function Confirmation(props){
   console.log(maxPeople)
   return (
     <>
-    <h1 className='confirm'>Awesome, let's have you booked for</h1>
-    <h1 className='title'>{title}</h1>
-    <span className='question-spot'>How many spots do you want to book?</span>
-    <input 
-    className='input-spot'
-    type ='number' 
-    min='1'
-    placeholder='enter your spots'
-    size='10px'
-    onChange={event => {
-      setPrice(event.target.value * individualPrice)
-      setPeopleSelected(event.target.value)
-      }
-    }
-    />
-    {peopleSelected>maxPeople && <Alert variant='danger' className='error-max'>The spots selected exceeds the maximum number of participants</Alert>}
-    {peopleSelected ==0 && <Alert variant='danger' className='error-min'>You must select at least one spot</Alert>}
-    <h3 className='total-price'>Total price : ${price}</h3>
-    <div className='button-group'>
-      <Link to='/bookings'>
-        <Button variant="success" onClick={exception}>
-          Confirm your booking
-        </Button>{' '}
-      </Link>
-      <Link to ={backLink}>
-        <Button variant="info">Cancel</Button>{' '}
-      </Link>
-    </div>
+      <Container>
+        <row><h1 className='confirm'>Awesome!</h1></row>
+
+        <row><h2 className='title'>Let's book you in for {title}</h2></row>
+        <row>
+          <span className='question-spot'>How many spots do you want to book?</span>
+          <input
+            className='input-spot'
+            type='number'
+            min='1'
+            placeholder='# of spots'
+            size='10px'
+            onChange={event => {
+              setPrice(event.target.value * individualPrice)
+              setPeopleSelected(event.target.value)
+            }
+            }
+          />
+        </row>
+        {peopleSelected > maxPeople && <Alert variant='danger' className='error-max'>Exceeds the maximum number of spots available on that day</Alert>}
+        {peopleSelected == 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
+        <row><h3 className='total-price'>Total price : ${price}.00</h3></row>
+        <div className='button-group'>
+          <Link to='/bookings'>
+            <Button variant="warning" onClick={exception}>Confirm your booking</Button>{' '}
+          </Link>
+          <Link to={backLink}>
+            <Button variant="danger">Cancel</Button>{' '}
+          </Link>
+        </div>
+      </Container>
     </>
   )
 
