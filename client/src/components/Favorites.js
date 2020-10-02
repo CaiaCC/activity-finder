@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "../css/favorites.css"
-import { Table, Button, Container, Badge } from 'react-bootstrap';
+import { Table, Button, Container, Badge, Alert } from 'react-bootstrap';
 
 import useFavoriteData from '../hooks/useFavoriteData'
 
@@ -33,8 +33,8 @@ export default function Favorites() {
       <tr key={favoredActivity.id}>
         <td>{favoredActivity.title}</td>
         {getDate() < favoredActivity.date ?
-          <td><Badge variant="success">Upcoming</Badge>{' '}</td> :
-          <td><Badge variant="danger">Expired</Badge>{' '}</td>
+          <td><Alert variant="success">Upcoming</Alert>{' '}</td> :
+          <td><Alert variant="danger">Expired</Alert>{' '}</td>
         }
         <td>{favoredActivity.max_number_of_participants}</td>
         <td>{favoredActivity.date}</td>
