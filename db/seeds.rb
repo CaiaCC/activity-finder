@@ -487,7 +487,7 @@ Activity.create!({
   address: '19 Georgia Street, Vancouver, 9V7 1X8',
   price_per_person: 66,
   max_number_of_participants: 14,
-  date: "12/14/2020",
+  date: "12/11/2020",
 })
 
 Activity.create!({
