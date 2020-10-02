@@ -8,15 +8,13 @@ import useFavoriteData from '../hooks/useFavoriteData'
 
 export default function Favorites() {
   const { favorites, favoredActivities, cancelFavorite } = useFavoriteData();
- 
+
   const favoredItems = favoredActivities.map(favoredActivity => {
     const favoredActivityId = favoredActivity.id
     const favoriteId = favorites.filter(obj => obj.activity_id === favoredActivityId)[0].id
     const bookingUrl = `/activities/${favoredActivityId}/confirmation`
     
-    const destroy= (event)=> {
-      event.preventDefault();
-
+    function destroy(favoriteId) {
       cancelFavorite(favoriteId)
         .then(console.log("favorite cancelled"))
         .catch(err => console.log("favorite cancel err: ", err))
@@ -45,7 +43,7 @@ export default function Favorites() {
           </Link>
         </td>
         <td>
-          <Button variant="danger" onClick={destroy}>
+          <Button variant="danger" onClick={() => destroy(favoriteId)}>
             Delete
           </Button>
         </td>

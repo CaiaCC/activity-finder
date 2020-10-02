@@ -19,15 +19,20 @@ export default function useFavoriteData() {
 	
 
   function cancelFavorite(favoriteId) {
-		return Promise.all([
-      Promise.resolve(axios.delete(`/api/users/1/favorites/${favoriteId}`)),
-			Promise.resolve(axios.get('/api/users/1/favorites')),
-			Promise.resolve(axios.get('/api/activities/user/1/favored'))
-    ]).then(all => { 
-      setFavorites(all[1].data);
-      setFavoredActivities(all[2].data);
-    })
-			.catch(err => console.log(err))
+    
+    const promise = axios.delete(`/api/users/1/favorites/${favoriteId}`)
+    .then(res=> res)
+    .catch(err => console.log(err))
+    // return Promise.all([
+    //   Promise.resolve(axios.delete(`/api/users/1/favorites/${favoriteId}`)),
+		// 	Promise.resolve(axios.get('/api/users/1/favorites')),
+		// 	Promise.resolve(axios.get('/api/activities/user/1/favored'))
+    // ]).then(all => { 
+    //   console.log(all)
+    //   setFavorites(all[1].data);
+    //   setFavoredActivities(all[2].data);
+    // })
+    return promise
   }
   
   function createFavorite(activity_id) {

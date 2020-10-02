@@ -31,20 +31,21 @@ export default function useBookingData() {
 			.catch(err => console.log(err))
   }
   
-  function createBooking(activity_id, price, numberOfPeople ) {
+  function createBooking(activityId, price, numberOfPeople) {
 		const bookingInfo = {
 			number_of_participants: numberOfPeople, 
 			price_per_person: price, 
 			user_id: 1, 
-			activity_id: activity_id
+			activity_id: activityId
 		}
 		return Promise.all([
       Promise.resolve(axios.post('/api/users/1/bookings', bookingInfo)),
-			Promise.resolve(axios.get('/api/users/1/bookings')),
-			Promise.resolve(axios.get('/api/activities/user/1/booked'))
+			// Promise.resolve(axios.get('/api/users/1/bookings')),
+			// Promise.resolve(axios.get('/api/activities/user/1/booked'))
 		]).then(all => {
-			setBookings(all[1].data);
-			setBookedActivities(all[2].data);
+			// setBookings(all[1].data);
+			// setBookedActivities(all[2].data);
+			return all
 		})
 			.catch(err => console.log(err))
   }

@@ -15,12 +15,11 @@ export default function Bookings() {
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
     const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
-    const spotReserved = booking.number_of_participants
+    console.log(booking)
+    const spotReserved = booking.number_of_participants 
     const bookingId = booking.id
     
-    const destroy = (event) => {
-      event.preventDefault();
-      
+    const destroy = () => {
       cancelBooking(bookingId)
       .then(console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
