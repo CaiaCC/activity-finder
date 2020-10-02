@@ -1,10 +1,6 @@
 import React from 'react';
 
 import "../css/favorites.css"
-
-import Banner from "./Banner"
-import useBookingData from '../hooks/useBookingData'
-
 import { Table, Button, Container, Badge } from 'react-bootstrap';
 
 import useBookingData from '../hooks/useBookingData'
