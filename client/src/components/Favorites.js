@@ -33,8 +33,8 @@ export default function Favorites() {
       <tr key={favoredActivity.id}>
         <td>{favoredActivity.title}</td>
         {getDate() < favoredActivity.date ?
-          <td><Alert variant="success">Upcoming</Alert>{' '}</td> :
-          <td><Alert variant="danger">Expired</Alert>{' '}</td>
+          <td><Badge variant="success">Upcoming</Badge>{' '}</td> :
+          <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
         <td>{favoredActivity.max_number_of_participants}</td>
         <td>{favoredActivity.date}</td>
