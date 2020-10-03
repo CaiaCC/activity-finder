@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../detail/activity.css"
+import { Alert } from 'react-bootstrap'
 
 import { Button, Badge, Row, Container, Col } from 'react-bootstrap';
 import Banner from '../Banner'
 import useFavoriteData from '../../hooks/useFavoriteData'
-import spotsRemaining from '../helper/helpers'
+import spotsRemaining from '../../helper/helpers'
 
 function Activity(props) {
   const [activity, setActivity] = useState([])
@@ -37,12 +38,36 @@ function Activity(props) {
   }
   
   const spots = spotsRemaining(activity);
-
+  const isBooked = () => {
+    if (Array.isArray(activity.bookings) || activity.bookings.length) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  const isFaved = () => {
+    if (Array.isArray(activity.favorites) || activity.favorites.length) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   return (
     <>
     <Banner></Banner>
       <Container>
-
+        { isBooked &&  
+          <Alert variant='primary'>
+          You already booked this activity, please check it out on 
+          <Alert.Link href="/bookings"> My bookings</Alert.Link> page.
+        </Alert>
+        }
+        { isFaved &&  
+          <Alert variant='primary'>
+          You already added this activity to 
+          <Alert.Link href="/favorites"> My favorites</Alert.Link>.
+        </Alert>
+        }
         <Row>
           <Col>
             <div className='info'>
@@ -55,12 +80,17 @@ function Activity(props) {
             <div className='pricetag'>Price per person: ${activity.price_per_person}
             </div>
             <div className='CTA'>
-              <Link to = {confirmationLink}>
-              <Button variant="warning">Join this activity</Button>{' '}
-              </Link>
+              { !isBooked &&
+                <Link to = {confirmationLink}>
+                <Button variant="warning">Join this activity</Button>{' '}
+                </Link>
+              }
+              { !isFaved &&
+
               <Link to='/favorites'>
                 <Button variant="info" onClick={addFav}>Add to favorites</Button>{' '}
               </Link>
+              }
             </div>
           </Col>
 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Button, Badge } from 'react-bootstrap';
 
-import spotsRemaining from './helper/helpers'
+import spotsRemaining from '../helper/helpers'
 
 export default function FavoriteItems(props) {
 	const { favorites, favoredActivities, cancelFavorite, getFavoredActivities } = props;
