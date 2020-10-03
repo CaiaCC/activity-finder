@@ -20,8 +20,8 @@ function App() {
       
 
       <Switch>
-        <Route exact path='/api/favorites' component={Favorites}/>
-        <Route exact path='/api/bookings' component={Bookings}/>
+        <Route exact path='/favorites' component={Favorites}/>
+        <Route exact path='/bookings' component={Bookings}/>
         <Route exact path='/' component={Activities} />
         <Route exact path='/activities/:id' component={Activity} />
         <Route exact path="/activities/:id/confirmation" component={Confirmation}/>

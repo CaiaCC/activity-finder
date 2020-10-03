@@ -1,25 +1,23 @@
 import React from 'react';
 
 import "../css/favorites.css"
-
-import Banner from "./Banner"
-import useBookingData from '../hooks/useBookingData'
-
 import { Table, Button, Container, Badge } from 'react-bootstrap';
 
+import useBookingData from '../hooks/useBookingData'
+
 export default function Bookings() {
-  const { state, cancelBooking } = useBookingData();
-  const bookings = state.bookings;
-  const bookedActivities = state.bookedActivities;
-  
+  const { bookings, bookedActivities, cancelBooking } = useBookingData();
   
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
-    const bookingId = bookings.filter(obj => obj.activity_id === bookedActivityId)[0].id
-
-    function destroy(bookingId) {
-      cancelBooking(bookingId)
-      .then( console.log("booking cancelled"))
+    const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
+    console.log(booking)
+    const spotReserved = booking.number_of_participants 
+    const bookingId = booking.id
+    
+    const destroy = (bookingId) => {
+      return cancelBooking(bookingId)
+      .then(res => console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
     }
     function getDate(){
@@ -32,19 +30,18 @@ export default function Bookings() {
     }
 
     return (
-      <tr key={bookedActivity.id}>
+      <tr key={bookedActivityId}>
         <td>{bookedActivity.title}</td>
         {getDate()<bookedActivity.date?
         <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
         <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
+        <td>{spotReserved}</td>
         <td>{bookedActivity.date}</td>
         <td>
-          <Button variant="danger" 
-            onClick={() => destroy(bookingId)}
-          >
-            Cancel
-          </Button>
+          {getDate() < bookedActivity.date &&
+            <Button variant="danger" onClick={() => destroy(bookingId)}>Cancel</Button>
+          }
         </td>
       </tr>
     )
@@ -58,8 +55,9 @@ export default function Bookings() {
             <tr>
               <th>Activity Title</th>
               <th>Status</th>
+              <th>Spots Reserved</th>
               <th>Date</th>
-              <th></th>
+              <th>Cancelation</th>
             </tr>
           </thead>
           <tbody>
