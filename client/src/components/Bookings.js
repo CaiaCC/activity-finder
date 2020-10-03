@@ -4,14 +4,23 @@ import "../css/favorites.css"
 import { Table, Button, Container, Badge } from 'react-bootstrap';
 
 import useBookingData from '../hooks/useBookingData'
+import Success from './success'
 
-export default function Bookings() {
+export default function Bookings(props) {
+  console.log(props)
   const { bookings, bookedActivities, cancelBooking } = useBookingData();
+  function getDate(){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    let currentDate = yyyy + '-' + mm + '-' + dd
+    return currentDate
+  }
   
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
     const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
-    console.log(booking)
     const spotReserved = booking.number_of_participants 
     const bookingId = booking.id
     
@@ -39,7 +48,7 @@ export default function Bookings() {
         <td>{spotReserved}</td>
         <td>{bookedActivity.date}</td>
         <td>
-          {getDate() < bookedActivity.date &&
+          {
             <Button variant="danger" onClick={() => destroy(bookingId)}>Cancel</Button>
           }
         </td>
@@ -48,6 +57,8 @@ export default function Bookings() {
   })
   return (
     <>
+    {/* {props.location.data[1]< getDate() &&  <Success header='Oh,no:' text="the activity is expired"/>} */}
+    {props.location.data && <Success header='Thank you for booking:' text={props.location.data[0]}/>}
       <Container className="list-box">
         <h1>Booked Activities</h1>
         <Table striped bordered hover>
