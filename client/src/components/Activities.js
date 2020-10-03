@@ -77,7 +77,7 @@ function Activities(props) {
             </Dropdown>
             <Button id="search-button" variant="primary" onClick={fetchData} >
               Search activities nearby
-      </Button>
+            </Button>
           </div>
         </div>
 

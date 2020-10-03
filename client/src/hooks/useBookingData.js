@@ -19,8 +19,7 @@ export default function useBookingData() {
   
   const getBookedActivities = () => {
     return axios.get('/api/activities/user/1/booked')
-    .then(res => setBookedActivities(res.data))
-    
+    .then(res => setBookedActivities(res.data)) 
   };
 
   function cancelBooking(bookingId) {
@@ -31,6 +30,7 @@ export default function useBookingData() {
   }
   
   function createBooking(activityId, pricePerPerson, numberOfPeople) {
+
     const newBooking = {
       number_of_participants: numberOfPeople, 
       price_per_person: pricePerPerson, 

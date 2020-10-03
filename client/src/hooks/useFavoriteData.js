@@ -30,15 +30,18 @@ export default function useFavoriteData() {
   };
   
   const createFavorite = activity_id => {
-    const newFavorite = {
-      user_id: 1, 
-      activity_id: activity_id
-    }
+    console.log("in create fav function", favoredActivities)
+    if(!favoredActivities.includes(activity_id)) {
+      const newFavorite = {
+        user_id: 1, 
+        activity_id: activity_id
+      }
 
-    return axios.post('/api/users/1/favorites', newFavorite)
-    .then(res => console.log('Sent post favorite request'))
-    .then(() => getFavoredActivities())
-    .catch(err => console.log('Err form post favorite request: ', err))
+      return axios.post('/api/users/1/favorites', newFavorite)
+      .then(res => console.log('Sent post favorite request'))
+      .then(() => getFavoredActivities())
+      .catch(err => console.log('Err form post favorite request: ', err))
+    }
     
   }
   
