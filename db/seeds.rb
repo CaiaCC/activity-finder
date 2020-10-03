@@ -463,7 +463,7 @@ Activity.create!({
   image_url: 'https://assets.simpleviewinc.com/simpleview/image/upload/crm/vancouverbc/Gastronomic-Gastown-Tour---Six-Acres-2_80BDB59B-3E2F-4EB7-8A746C30C0E53DB6_ea21920b-e45d-4681-9d2707814823d065.jpg',
   city: 'North Vancouver',
   address: '11 Bilam Stree, North Vancouver, 9C8 1X8',
-  price_per_person: 78,
+  price_per_person: 85,
   max_number_of_participants: 12,
   date: "09/08/2021",
 })
@@ -487,7 +487,7 @@ Activity.create!({
   address: '19 Georgia Street, Vancouver, 9V7 1X8',
   price_per_person: 66,
   max_number_of_participants: 14,
-  date: "12/14/2020",
+  date: "12/11/2020",
 })
 
 Activity.create!({
@@ -577,6 +577,51 @@ Activity.create!({
   max_number_of_participants:16,
   date: "07/07/2020",
 })
+
+Activity.create!({
+  title:  "Inuit Gallery",
+  description: "Since 1979, the Inuit Gallery of Vancouver Ltd has offered a museum-quality collection of masterwork Inuit, Northwest Coast and other Canadian art in the heart of Gastown.  We carry a tradition of presenting important exhibitions of Canadian aboriginal art, featuring new works by senior artists and exploring the work of the talented next generation of artists.",
+  image_url: 'https://gastown.org/wp-content/uploads/2017/06/Homepage_banner_gallery-1.jpeg',
+  city: 'Vancouver',
+  address: '10 Olmpic Plaza, Vancouver, 9B7 1M9',
+  price_per_person: 112,
+  max_number_of_participants:20,
+  date: "12/12/2020",
+})
+
+Activity.create!({
+  title:  "Alpine Lakes & Glaciers",
+  description: "A breathtaking tour exploring snow-capped mountains and a remote alpine lake.",
+  image_url: 'https://dtatcgknaeh2p.cloudfront.net/wp-content/uploads/2018/07/vancouver_alpine_lakes_and_glaciers-600x382.png',
+  city: 'Vancouver',
+  address: '10 Main Street, Vancouver, 96M 1M9',
+  price_per_person: 152,
+  max_number_of_participants:4,
+  date: "05/06/2021",
+})
+
+Activity.create!({
+  title:  "Vancouver to Whistler Flight",
+  description: "Fly in style from Vancouver to Whistler in a classic de Havilland seaplane. Depart from the Vancouver Harbour Floatplane Centre and fly out over Coal Harbour and up the Georgia Strait. You’ll be treated to aerial views of the mountains and ocean on the quick, scenic flight up the coast. Arrive with plenty of time to explore the pretty alpine village of Whistler. Read more about Vancouver to Whistler Scenic Flight 2020.",
+  image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/6b/55/c0.jpg',
+  city: 'Vancouver',
+  address: '10 Main Street, Vancouver, 96M 1M9',
+  price_per_person: 159,
+  max_number_of_participants:8,
+  date: "04/05/2021",
+})
+
+Activity.create!({
+  title:  "Park & Tilford Garden",
+  description: "With over 150,000 lights sparkling among cedar & fir trees, glittering upon fountains and ponds, and peeping out between snow-dusted shrubs, Park & Tilford Gardens Hi-Light Festival is a lovely little holiday season spectacle. Great as a free tourist stop after visiting Lynn Canyon (also free), the winding pathways and arched bridges provide a perfect place for sugar-saturated kids to run wild in a Christmas-bright setting, and for travelers to snap photos of coastal Canadian trees twinkling with illuminated decorations. ",
+  image_url: 'https://janinecrossblog.files.wordpress.com/2017/12/entrance-to-park-tilford-gardens.jpg',
+  city: 'North Vancouver',
+  address: '11 Capilano, North Vancouver, 9C8 1X8',
+  price_per_person: 94,
+  max_number_of_participants: 24,
+  date: "05/12/2020",
+})
+
 ## BOOKINGS
 Booking.destroy_all
 
