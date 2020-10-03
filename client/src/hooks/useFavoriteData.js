@@ -2,9 +2,9 @@ import {useState, useEffect} from "react";
 import axios from 'axios';
 
 export default function useFavoriteData() {
-	const [favorites, setFavorites] = useState([]);
-	const [favoredActivities, setFavoredActivities] = useState([]);
-
+  const [favorites, setFavorites] = useState([]);
+  const [favoredActivities, setFavoredActivities] = useState([]);
+  
   useEffect(() => {
     Promise.all([
       Promise.resolve(axios.get('/api/users/1/favorites')),
@@ -14,41 +14,33 @@ export default function useFavoriteData() {
       setFavorites(all[0].data);
       setFavoredActivities(all[1].data);
     })
-    .catch(err => console.log("useFavoriteData.js err: ", err))
-	}, [])
-	
+    .catch(err => console.log("getStates err: ", err))
+  }, [favorites.length]);
 
-  function cancelFavorite(favoriteId) {
+  const getFavoredActivities = () => {
+    return axios.get('/api/activities/user/1/favored')
+    .then(res => setFavoredActivities(res.data))
+  };
+
+  const cancelFavorite = favoriteId => {
+    return axios.delete(`/api/users/1/favorites/${favoriteId}`)
+    .then(res => console.log('Sent delete favorite request'))
+    .then(() => getFavoredActivities())
+    .catch(err => console.log('Err form delete favorite request: ', err))
+  };
+  
+  const createFavorite = activity_id => {
+    const newFavorite = {
+      user_id: 1, 
+      activity_id: activity_id
+    }
+
+    return axios.post('/api/users/1/favorites', newFavorite)
+    .then(res => console.log('Sent post favorite request'))
+    .then(() => getFavoredActivities())
+    .catch(err => console.log('Err form post favorite request: ', err))
     
-    const promise = axios.delete(`/api/users/1/favorites/${favoriteId}`)
-    .then(res=> res)
-    .catch(err => console.log(err))
-    // return Promise.all([
-    //   Promise.resolve(axios.delete(`/api/users/1/favorites/${favoriteId}`)),
-		// 	Promise.resolve(axios.get('/api/users/1/favorites')),
-		// 	Promise.resolve(axios.get('/api/activities/user/1/favored'))
-    // ]).then(all => { 
-    //   console.log(all)
-    //   setFavorites(all[1].data);
-    //   setFavoredActivities(all[2].data);
-    // })
-    return promise
   }
   
-  function createFavorite(activity_id) {
-    const favoriteInfo = {
-			user_id: 1, 
-			activity_id: activity_id
-		}
-    return Promise.all([
-      Promise.resolve(axios.post('/api/users/1/favorites', favoriteInfo)),
-			Promise.resolve(axios.get('/api/users/1/favorites')),
-			Promise.resolve(axios.get('/api/activities/user/1/favored'))
-    ]).then(all => { 
-      setFavorites(all[1].data);
-      setFavoredActivities(all[2].data);
-    })
-			.catch(err => console.log(err))
-  }
-	return {favorites, favoredActivities, cancelFavorite, createFavorite}
-}
+  return { favorites, favoredActivities, cancelFavorite, createFavorite, getFavoredActivities };
+};
