@@ -57,7 +57,6 @@ export default function Bookings(props) {
   })
   return (
     <>
-    {/* {props.location.data[1]< getDate() &&  <Success header='Oh,no:' text="the activity is expired"/>} */}
     {props.location.data && <Success header='Thank you for booking:' text={props.location.data[0]}/>}
       <Container className="list-box">
         <h1>Booked Activities</h1>
