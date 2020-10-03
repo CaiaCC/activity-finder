@@ -14,10 +14,12 @@ function Activities(props) {
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
   const [priceRange, setPriceRange] = useState('Your Ideal Price Range')
+  const [status, setStatus] = useState('')
 
   const fetchData = () => {
     axios.get('/api/activities')
       .then((response) => {
+        setStatus('loading')
         console.log(response) // The entire response from the Rails API
         setActivities(response.data) //The first activity
         setState();
@@ -85,11 +87,14 @@ function Activities(props) {
       <div className="App">
         <h1>{state}</h1>
       </div>
+      {status ==='loading' && activities.length === 0 &&
       <div className='spinner-container'>
-        <Spinner animation="border" role="status" className='spinner'>
-          <span className="sr-only">Loading...</span>
+         <Button variant="dark" disabled>
+          <Spinner animation="border" role="status" className='spinner'>
         </Spinner>
-      </div>
+        <span className='spinner-text'>loading activities</span>
+        </Button>
+      </div>}  
       <Container>
         <CardColumns>
           {activityList}
