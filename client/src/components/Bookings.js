@@ -8,7 +8,7 @@ import useBookingData from '../hooks/useBookingData'
 export default function Bookings() {
   const { bookings, bookedActivities, cancelBooking } = useBookingData();
   
-  const bookedItems = bookedActivities.map(bookedActivity => {
+  const bookedItems = bookedActivities.map((bookedActivity, index) => {
     const bookedActivityId = bookedActivity.id
     const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
     console.log(booking)
@@ -30,7 +30,7 @@ export default function Bookings() {
     }
 
     return (
-      <tr key={bookedActivityId}>
+      <tr key={index}>
         <td>{bookedActivity.title}</td>
         {getDate()<bookedActivity.date?
         <td><Badge variant="success">Upcoming</Badge>{' '}</td>:

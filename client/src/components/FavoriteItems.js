@@ -4,14 +4,18 @@ import { Link } from 'react-router-dom'
 
 import { Button, Badge } from 'react-bootstrap';
 
+import spotsRemaining from './helper/helpers'
+
 export default function FavoriteItems(props) {
 	const { favorites, favoredActivities, cancelFavorite, getFavoredActivities } = props;
 
-	const favoredItems = favoredActivities.map(favoredActivity => {
+	const favoredItems = favoredActivities.map((favoredActivity, index) => {
+		console.log(favoredActivity)
     const favoredActivityId = favoredActivity.id
     const favoriteId = favorites.filter(obj => obj.activity_id === favoredActivityId)[0].id
-    const activityUrl = `/activities/${favoredActivityId}`
-    
+		const activityUrl = `/activities/${favoredActivityId}`;
+		const spots = spotsRemaining(favoredActivity);
+    console.log(typeof favoredActivity.bookings.length)
     function destroy(favoriteId) {
       return cancelFavorite(favoriteId)
       .then(res => console.log("favorite cancelled"))
@@ -28,13 +32,13 @@ export default function FavoriteItems(props) {
     }
 
     return (
-      <tr key={favoredActivityId}>
+      <tr key={index}>
         <td>{favoredActivity.title}</td>
         {getDate()<favoredActivity.date?
         <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
         <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
-        <td>{favoredActivity.max_number_of_participants}</td>
+        <td>{spots}</td>
         <td>{favoredActivity.date}</td>
         <td>
           <Link to={activityUrl}>
@@ -49,7 +53,5 @@ export default function FavoriteItems(props) {
       </tr>
     )
 	})
-	return (
-	<>{favoredItems}</>
-	)
+	return (<>{favoredItems}</>)
 }
