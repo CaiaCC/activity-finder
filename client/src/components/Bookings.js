@@ -15,9 +15,9 @@ export default function Bookings() {
     const spotReserved = booking.number_of_participants 
     const bookingId = booking.id
     
-    const destroy = () => {
-      cancelBooking(bookingId)
-      .then(console.log("booking cancelled"))
+    const destroy = (bookingId) => {
+      return cancelBooking(bookingId)
+      .then(res => console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
     }
     function getDate(){
@@ -30,21 +30,18 @@ export default function Bookings() {
     }
 
     return (
-      <tr key={bookedActivity.id}>
+      <tr key={bookedActivityId}>
         <td>{bookedActivity.title}</td>
         {getDate()<bookedActivity.date?
         <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
         <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
         <td>{spotReserved}</td>
-        <td>Status</td>
         <td>{bookedActivity.date}</td>
         <td>
-          <Button variant="danger" 
-            onClick={destroy}
-          >
-            Cancel
-          </Button>
+          {getDate() < bookedActivity.date &&
+            <Button variant="danger" onClick={() => destroy(bookingId)}>Cancel</Button>
+          }
         </td>
       </tr>
     )
@@ -60,7 +57,7 @@ export default function Bookings() {
               <th>Status</th>
               <th>Spots Reserved</th>
               <th>Date</th>
-              <th></th>
+              <th>Cancelation</th>
             </tr>
           </thead>
           <tbody>

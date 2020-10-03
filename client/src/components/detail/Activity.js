@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 function Activity(props) {
   const [activity, SetActivity] = useState({})
-  const { createFavorite } = useFavoriteData();
+  const { createFavorite, getFavoredActivities } = useFavoriteData();
   useEffect(() => {
     const id = props.match.params.id;
     const url = `/api/activities/${id}`
@@ -23,8 +23,9 @@ function Activity(props) {
   const confirmationLink = `${id}/confirmation`
   console.log(activity)
   function addFav() {
-    createFavorite(id)
+    return createFavorite(id)
     .then(console.log("Add to Fav"))
+    .then(getFavoredActivities())
     .catch(err => console.log("Err adding fav from detail activity page" ,err))
   }
   return (

@@ -43,7 +43,6 @@ function Confirmation(props){
     <>
       <Container>
         <row><h1 className='confirm'>Awesome!</h1></row>
-
         <row><h2 className='title'>Let's book you in for {title}</h2></row>
         <row>
           <span className='question-spot'>How many spots do you want to book?</span>
