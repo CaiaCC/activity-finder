@@ -29,3 +29,11 @@ img{
   justify-content: center;
   align-items: center;
 }
+
+.spinner-container{
+  display:flex;
+  justify-content: center;
+}
+.spinner{
+  
+}

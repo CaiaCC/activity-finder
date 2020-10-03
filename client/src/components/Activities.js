@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button } from 'react-bootstrap'
 import { Dropdown } from 'react-bootstrap'
 import Banner from './Banner'
-import { Button, CardColumns, Container } from 'react-bootstrap'
+import { Button, CardColumns, Container, Spinner } from 'react-bootstrap'
 
 function Activities(props) {
 
-  const [state, setState] = useState({ message: "Find An Activity Nearby!" })
+  const [state, setState] = useState( "Let's go!" )
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
   const [priceRange, setPriceRange] = useState('Your Ideal Price Range')
@@ -20,7 +20,7 @@ function Activities(props) {
       .then((response) => {
         console.log(response) // The entire response from the Rails API
         setActivities(response.data) //The first activity
-        setState({});
+        setState();
       })
   }
   console.log(city);
@@ -83,7 +83,12 @@ function Activities(props) {
 
       </Banner>
       <div className="App">
-        <h1>Let's go!</h1>
+        <h1>{state}</h1>
+      </div>
+      <div className='spinner-container'>
+        <Spinner animation="border" role="status" className='spinner'>
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       </div>
       <Container>
         <CardColumns>
