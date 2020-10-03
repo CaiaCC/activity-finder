@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, {  useState } from 'react';
 import axios from 'axios';
 import Activity from "./Activity"
 import "../css/activities.css"

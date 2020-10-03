@@ -1,7 +1,7 @@
 import React from "react"
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../css/activity.css"
-import { Card, CardDeck, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 function Activity(props) {
   return (

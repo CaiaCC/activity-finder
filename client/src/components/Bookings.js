@@ -7,16 +7,7 @@ import useBookingData from '../hooks/useBookingData'
 import Success from './success'
 
 export default function Bookings(props) {
-  console.log(props)
   const { bookings, bookedActivities, cancelBooking } = useBookingData();
-  function getDate(){
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0');
-    let yyyy = today.getFullYear();
-    let currentDate = yyyy + '-' + mm + '-' + dd
-    return currentDate
-  }
   
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
