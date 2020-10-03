@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 import '../css/confirmation.css'
 import useBookingData from '../hooks/useBookingData'
 
-function Confirmation(props){
+function Confirmation(props) {
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
   const [individualPrice, setIndividualPrice] = useState(0)
   const [maxPeople, setMaxPeople] = useState(0)
-  const [peopleSelected, setPeopleSelected] =useState(0)
-  const {createBooking} = useBookingData()
+  const [peopleSelected, setPeopleSelected] = useState(0)
+  const { createBooking } = useBookingData()
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -27,15 +27,16 @@ function Confirmation(props){
       .catch(res => console.log(res))
 
   }, [])
-  
-  const exception =(event)=>{
-    if(peopleSelected == 0 || peopleSelected > maxPeople){
+
+  const exception = (event) => {
+    if (peopleSelected == 0 || peopleSelected > maxPeople) {
       event.preventDefault();
+    } else {
+      createBooking(id, individualPrice, peopleSelected)
     }
-    createBooking(id, individualPrice, peopleSelected)
-    
+
   }
-  
+
   const id = props.match.params.id
   const backLink = `/activities/${id}`
   console.log(maxPeople)
