@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "../css/navbar.css"
+import "../css/toolbar.css"
 
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, Button, FormControl } from 'react-bootstrap';
 
@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <>
-      {/* <Navbar id="footer" className="justify-content-center" bg="dark" variant="dark" sticky="bottom">
+      <Navbar id="footer" className="justify-content-center" bg="dark" variant="dark" fixed="bottom">
         <Nav className="justify-content-center" activeKey="/home">
           <Navbar.Text>
             ActivityGo ©2020
@@ -19,7 +19,7 @@ export default function Footer() {
 
           </Nav.Item>
         </Nav>
-      </Navbar> */}
+      </Navbar>
 
     </>
   )
