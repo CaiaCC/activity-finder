@@ -8,6 +8,18 @@ import Success from './success'
 
 export default function Bookings(props) {
   const { bookings, bookedActivities, cancelBooking } = useBookingData();
+  function getDate(){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    let currentDate = yyyy + '-' + mm + '-' + dd
+    return currentDate
+  }
+  let activityDate;
+  if(props.location.data){
+     activityDate=props.location.data[1]
+  }
   
   const bookedItems = bookedActivities.map(bookedActivity => {
     const bookedActivityId = bookedActivity.id
@@ -48,7 +60,8 @@ export default function Bookings(props) {
   })
   return (
     <>
-    {props.location.data && <Success header='Thank you for booking:' text={props.location.data[0]}/>}
+
+    {activityDate > getDate()? <Success header='Thank you for booking:' text={props.location.data[0]} />: <Success header='Oops:' text='the activity you booked has expired'/>}
       <Container className="list-box">
         <h1>Booked Activities</h1>
         <Table striped bordered hover>
