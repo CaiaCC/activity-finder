@@ -2,8 +2,11 @@ import React from "react"
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import "../css/activity.css"
 import { Card, CardDeck, Button } from 'react-bootstrap';
+import spotsRemaining from '../helper/helpers'
 
 function Activity(props) {
+  const spots = spotsRemaining(props.item);
+
   return (
     <>
       <Card style={{ flex: 1 }}>
@@ -15,14 +18,13 @@ function Activity(props) {
           </Card.Text>
 
           <Card.Text>
-            Spots remaining: {props.item.max_number_of_participants}
+            Spots remaining: {spots}
           </Card.Text>
           <Link to={`/activities/${props.item.id}`}>
             <Button variant="primary">View more details</Button>
           </Link>
         </Card.Body>
       </Card>
-
 
     </>
   )

@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../detail/activity.css"
-import { Alert } from 'react-bootstrap'
+import { Button, Badge, Row, Container, Col, Alert } from 'react-bootstrap';
 
-import { Button, Badge, Row, Container, Col } from 'react-bootstrap';
 import Banner from '../Banner'
 import useFavoriteData from '../../hooks/useFavoriteData'
 import spotsRemaining from '../../helper/helpers'
@@ -18,7 +17,7 @@ function Activity(props) {
   useEffect(() => {
     const id = props.match.params.id;
     const url = `/api/activities/${id}`
-    // console.log(props)
+    // console.log("props", props)
     axios.get(url)
       .then(res => setActivity(res.data))
       .catch(res => console.log(res))
@@ -27,42 +26,49 @@ function Activity(props) {
 
   const id = props.match.params.id;
   const confirmationLink = `${id}/confirmation`;
-
-  console.log( activity.bookings)
-
+  
   function addFav() {
     return createFavorite(id)
     .then(console.log("Add to Fav"))
     .then(getFavoredActivities())
     .catch(err => console.log("Err adding fav from detail activity page" ,err))
   }
+  // console.log(activity)
   
   const spots = spotsRemaining(activity);
-  const isBooked = () => {
-    if (Array.isArray(activity.bookings) || activity.bookings.length) {
-      return true;
-    } else {
-      return false;
+  const {bookings, favorites} = activity;
+
+  const isBooked = (bookings) => {
+    if (Array.isArray(bookings)) {
+      if (bookings.length === 0) {
+        return false;
+      } else {
+        return true;
+      }
     }
   }
-  const isFavored = () => {
-    if (Array.isArray(activity.favorites) || activity.favorites.length) {
-      return true;
-    } else {
-      return false;
+
+  const isFavored = (favorites) => {
+    if (Array.isArray(favorites)) {
+      if (favorites.length === 0) {
+        return false;
+      } else {
+        return true;
+      }
     }
   }
+  
   return (
     <>
     <Banner></Banner>
       <Container>
-        { isBooked &&  
+        { isBooked(bookings) &&  
           <Alert variant='primary'>
           You already booked this activity, please check it out on 
           <Alert.Link href="/bookings"> My bookings</Alert.Link> page.
         </Alert>
         }
-        { isFavored &&  
+        { isFavored(favorites) &&  
           <Alert variant='primary'>
           You already added this activity to 
           <Alert.Link href="/favorites"> My favorites</Alert.Link>.
@@ -85,13 +91,12 @@ function Activity(props) {
             <div className='pricetag'>Price per person: ${activity.price_per_person}
             </div>
             <div className='CTA'>
-              { !isBooked &&
+              { !isBooked(bookings) &&
                 <Link to = {confirmationLink}>
                 <Button variant="warning">Join this activity</Button>{' '}
                 </Link>
               }
-              { !isFavored &&
-
+              { !isFavored(favorites) &&
               <Link to='/favorites'>
                 <Button variant="info" onClick={addFav}>Add to favorites</Button>{' '}
               </Link>
