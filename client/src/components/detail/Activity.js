@@ -45,7 +45,7 @@ function Activity(props) {
       return false;
     }
   }
-  const isFaved = () => {
+  const isFavored = () => {
     if (Array.isArray(activity.favorites) || activity.favorites.length) {
       return true;
     } else {
@@ -62,10 +62,15 @@ function Activity(props) {
           <Alert.Link href="/bookings"> My bookings</Alert.Link> page.
         </Alert>
         }
-        { isFaved &&  
+        { isFavored &&  
           <Alert variant='primary'>
           You already added this activity to 
           <Alert.Link href="/favorites"> My favorites</Alert.Link>.
+        </Alert>
+        }
+        { spots === 0 &&  
+          <Alert variant='danger'>
+          No more spots remain for this activity.
         </Alert>
         }
         <Row>
@@ -85,7 +90,7 @@ function Activity(props) {
                 <Button variant="warning">Join this activity</Button>{' '}
                 </Link>
               }
-              { !isFaved &&
+              { !isFavored &&
 
               <Link to='/favorites'>
                 <Button variant="info" onClick={addFav}>Add to favorites</Button>{' '}
