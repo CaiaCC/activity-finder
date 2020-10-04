@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import Activity from "./Activity"
+
 import "../css/activities.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button } from 'react-bootstrap'
-import { Dropdown } from 'react-bootstrap'
+import { Button, CardColumns, Container, Dropdown } from 'react-bootstrap'
+
+import Activity from "./Activity"
 import Banner from './Banner'
-import { Button, CardColumns, Container } from 'react-bootstrap'
 
 function Activities(props) {
 

@@ -76,7 +76,7 @@ function Activity(props) {
         }
         { spots === 0 &&  
           <Alert variant='danger'>
-          No more spots remain for this activity.
+          No more spots available for this activity.
         </Alert>
         }
         <Row>
