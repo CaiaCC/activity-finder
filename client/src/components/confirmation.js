@@ -12,6 +12,7 @@ function Confirmation(props) {
   const [maxPeople, setMaxPeople] = useState(0)
   const [peopleSelected, setPeopleSelected] = useState(0)
   const { createBooking } = useBookingData()
+  const [date, setDate] = useState('')
 
   useEffect(() => {
     const id = props.match.params.id;
