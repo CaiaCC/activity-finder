@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom'
 import '../css/confirmation.css'
 import useBookingData from '../hooks/useBookingData'
 
-function Confirmation(props){
+function Confirmation(props) {
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
   const [individualPrice, setIndividualPrice] = useState(0)
   const [maxPeople, setMaxPeople] = useState(0)
-  const [peopleSelected, setPeopleSelected] =useState(0)
-  const [date,setDate] =useState('')
-  const {createBooking} = useBookingData()
+  const [peopleSelected, setPeopleSelected] = useState(0)
+  const { createBooking } = useBookingData()
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -22,21 +21,22 @@ function Confirmation(props){
         setTitle(res.data.title)
         setIndividualPrice(res.data.price_per_person)
         setMaxPeople(res.data.max_number_of_participants)
-        setDate(res.data.date)
+        // setDate(res.data.date)
       })
 
       .catch(res => console.log(res))
 
   }, [])
-  
-  const exception =(event)=>{
-    if(peopleSelected === 0 || peopleSelected > maxPeople){
+
+  const exception = (event) => {
+    if (peopleSelected == 0 || peopleSelected > maxPeople) {
       event.preventDefault();
-    } 
-    createBooking(id, individualPrice, peopleSelected)
-    
+    } else {
+      createBooking(id, individualPrice, peopleSelected)
+    }
+
   }
-  
+
   const id = props.match.params.id
   const backLink = `/activities/${id}`
 
@@ -64,7 +64,7 @@ function Confirmation(props){
         {peopleSelected === 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
         <row><h3 className='total-price'>Total price : ${price}.00</h3></row>
         <div className='button-group'>
-          <Link to={{pathname:"/bookings", data:[title, date]}}>
+          <Link to={{pathname:"/bookings", data:[title]}}>
             <Button variant="warning" onClick={exception}>Confirm your booking</Button>{' '}
           </Link>
           <Link to={backLink}>
