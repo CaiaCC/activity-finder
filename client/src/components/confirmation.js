@@ -30,7 +30,7 @@ function Confirmation(props){
   }, [])
   
   const exception =(event)=>{
-    if(peopleSelected == 0 || peopleSelected > maxPeople){
+    if(peopleSelected === 0 || peopleSelected > maxPeople){
       event.preventDefault();
     } 
     createBooking(id, individualPrice, peopleSelected)
@@ -61,7 +61,7 @@ function Confirmation(props){
           />
         </row>
         {peopleSelected > maxPeople && <Alert variant='danger' className='error-max'>Exceeds the maximum number of spots available on that day</Alert>}
-        {peopleSelected == 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
+        {peopleSelected === 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
         <row><h3 className='total-price'>Total price : ${price}.00</h3></row>
         <div className='button-group'>
           <Link to={{pathname:"/bookings", data:[title, date]}}>
