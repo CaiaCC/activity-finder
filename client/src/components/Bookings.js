@@ -41,6 +41,7 @@ export default function Bookings(props) {
       return currentDate
     }
 
+    
     return (
       <tr key={bookedActivityId}>
         <td>{bookedActivity.title}</td>
