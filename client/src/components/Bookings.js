@@ -39,7 +39,7 @@ export default function Bookings(props) {
         <td>{spotReserved}</td>
         <td>{bookedActivity.date}</td>
         <td>
-          {
+          {getDate()<bookedActivity.date &&
             <Button variant="danger" onClick={() => destroy(bookingId)}>Cancel</Button>
           }
         </td>
