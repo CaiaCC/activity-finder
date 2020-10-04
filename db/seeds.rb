@@ -133,7 +133,7 @@ act8 = Activity.create!({
   image_url: 'https://live.staticflickr.com/7795/27638704875_f58b1f4853_b.jpg',
   city: 'Squamish',
   address: '4530 Dometa Street, Squamish, V5T 0W8',
-  price_per_person: 35,
+  price_per_person: 93,
   max_number_of_participants: 3,
   date: "20/11/2020",
 })
@@ -393,7 +393,7 @@ Activity.create!({
 
 Activity.create!({
   title:  "Melreese Golf Club",
-  description: "Enjoy a round of golfing conveniently located near the VancouverInternational Airport is the Melreese Golf Course. 18 rounds of expertly laid out golfing. Home to several university teams including the University of Vancouver, the course offers competitive year round rates.",
+  description: "Enjoy a round of golfing conveniently located near the  International Airport is the Melreese Golf Course. 18 rounds of expertly laid out golfing. Home to several university teams including the University of Vancouver, the course offers competitive year round rates.",
   image_url: 'https://s3.amazonaws.com/golfcanada/app/uploads/golfcanada/production/2019/09/16111601/ISLINGTON_GOLF_CLUB_1000.jpg',
   city: 'Delta',
   address: '14 Green Avenue, Delta, 9V6 19',
@@ -496,7 +496,7 @@ Activity.create!({
   image_url: 'https://s3-ca-central-1.amazonaws.com/glenbow-media-library/glenbow/corporate-website/current/wp-content/uploads/2020/07/27145356/Glenbow-FirstThursday-May2-69-1-1200x800.jpg',
   city: 'Delta',
   address: '5454 Aspen Street, Delta, 2M9 6G7',
-  price_per_person: 26,
+  price_per_person: 45,
   max_number_of_participants: 12,
   date: "06/07/2021",
 })
@@ -539,8 +539,8 @@ Activity.create!({
   description: "The objective of this class is to provide a fun 3 hour class to families of up to 4 people with at least 2 children in the group.",
   image_url: 'https://cdn.biltmorehotel.com/assets/img/hotel/kids-cooking-classes.jpg',
   city: 'Squamish',
-  address: '245 Main Street, North Vancouver, 2X8 T3E',
-  price_per_person: 35,
+  address: '245 Main Street, Squamish, 2X8 T3E',
+  price_per_person: 85,
   max_number_of_participants: 16,
   date: "11/12/2020",
 })
@@ -591,7 +591,7 @@ Activity.create!({
 
 Activity.create!({
   title:  "Alpine Lakes & Glaciers",
-  description: "A breathtaking tour exploring snow-capped mountains and a remote alpine lake.",
+  description: "A breathtaking tour exploring snow-capped mountains and a remote alpine lake. Departs from Vancouver and flies over the North Shore snowcapped mountain. Join us on this amazing scenic tour.",
   image_url: 'https://dtatcgknaeh2p.cloudfront.net/wp-content/uploads/2018/07/vancouver_alpine_lakes_and_glaciers-600x382.png',
   city: 'Vancouver',
   address: '10 Main Street, Vancouver, 96M 1M9',
@@ -620,6 +620,329 @@ Activity.create!({
   price_per_person: 94,
   max_number_of_participants: 24,
   date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "Rejunenating Body Spa",
+  description: "Warm up this month with a promotion designed to help you unwind and feel refreshed. The treatment begins with a 75 minutes hot stone massage. As part of this traditional Japanese massage technique, smooth , heated stones are placed on the body's pressure points. The heat from the stones helps to loosen muscles for a more relaxed better sleep, while improving the circulation and flow of energy.
+  The spa therapist will perform a head massage to help relieve tension in the forehead and scalp areas. Relaxation and rejuvenation at its finest!",
+  image_url: 'https://gallery.mailchimp.com/dafce54ef251438f249fcbb53/images/df8b17e2-d5c1-443d-8310-2f81c83a331c.jpg',
+  city: 'North Vancouver',
+  address: '10 Londsale Ave, North Vancouver, 96M 1M9',
+  price_per_person: 145,
+  max_number_of_participants:2,
+  date: "04/05/2020",
+})
+
+Activity.create!({
+  title:  "Vancouver Sky Diving Tandem",
+  description: "Offers first time Tandem Skydiving, this is the safest, most enjoyable way to experience Skydiving. Our Accelerated Freefall Program offers full courses for those who wish to learn to Solo Skydive . All of our Tandem Skydives are done with an experienced and qualified Tandem Instructors  at our Abbotsford Skydive Centre located about 45 minutes drive East of Downtown Vancouver.",
+  image_url: 'https://media-cdn.tripadvisor.com/media/photo-o/0f/6e/df/b6/skydive-vancouver.jpg',
+  city: 'North Vancouver',
+  address: '11 Capilano, North Vancouver, 9C8 1X8',
+  price_per_person: 145,
+  max_number_of_participants: 4,
+  date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "North Vancouver Food Tour",
+  description: "We are here to provide first class hospitality and tender loving care of our guests while sharing our passion for the world’s best food producers, markets, artisans, chefs and restaurants in a fun manner whether we are guiding someone on a walking tour in our home base of Vancouver, BC or leading an adventure to the world’s most fascinating culinary destinations.",
+  image_url: 'https://miamifoodtours.com/wp-content/uploads/2016/03/swooped-with-forks-138-1500x658.jpg',
+  city: 'North Vancouver',
+  address: '7145 Nancy Green Drive, North Vancouver, 4C8 148',
+  price_per_person: 152,
+  max_number_of_participants: 12,
+  date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "Scandinave Spa",
+  description: "Experience the age-old Finnish tradition of soaking in soothing outdoor baths at Whistler’s most unique spa. The Scandinave Spa combines rustic elegance with majestic scenery in a tranquil, secluded setting. Enjoy the baths or add a massage for complete rejuvenation. Open air baths are available year round, with heated solariums for relaxing and a café for refuelling.",
+  image_url: 'https://res.cloudinary.com/whistler/image/upload/w_1200,c_scale,dpr_2.0,q_auto/v1/s3/images/header/scandinave-spa-baths-wellness-1.jpg',
+  city: 'Whistler',
+  address: '7145 Nancy Green Drive, Whistler, 4C8 148',
+  price_per_person: 78,
+  max_number_of_participants: 12,
+  date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "Whistler Food Tour",
+  description: "We are here to provide first class hospitality and tender loving care of our guests while sharing our passion for the world’s best food producers, markets, artisans, chefs and restaurants in a fun manner whether we are guiding someone on a walking tour in our home base of Whistler, BC or leading an adventure to the world’s most fascinating culinary destinations.",
+  image_url: 'https://miamifoodtours.com/wp-content/uploads/2016/03/swooped-with-forks-138-1500x658.jpg',
+  city: 'Whistler',
+  address: '7145 Nancy Green Drive, North Vancouver, 4C8 148',
+  price_per_person: 85,
+  max_number_of_participants: 10,
+  date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "Superfly Ziplines",
+  description: "Soar like a falcon over the Fitzsimmons Valley between Whistler and Blackcomb Mountains. This tour features 3 different ziplines, including a 2400 ft zipline with a 30-storey descent, perfect for anyone who wants a heart-pounding adventure!",
+  image_url: 'https://res.cloudinary.com/whistler/image/upload/w_1200,c_scale,dpr_2.0,q_auto/v1/s3/images/header/superfly-zipline-tour.jpg',
+  city: 'Whistler',
+  address: '7145 Nancy Green Drive, Whistler, 4C8 148',
+  price_per_person: 155,
+  max_number_of_participants: 10,
+  date: "05/12/2020",
+})
+Activity.create!({
+  title:  "Whistler Bungee Jumping",
+  description: "Feel the exhilaration of jumping from a 160-foot bridge spanning 300 feet over the glacial-fed Cheakamus river. Feel the exhilaration of jumping from a 160-foot bridge spanning 300 feet over the glacial-fed Cheakamus river.",
+  image_url: 'https://res.cloudinary.com/whistler/image/upload/w_1200,c_scale,dpr_2.0,q_auto/v1/s3/images/header/whistler-bungee-jumping.jpg',
+  city: 'Whistler',
+  address: '7145 Nancy Green Drive, Whistler, 4C8 148',
+  price_per_person: 135,
+  max_number_of_participants: 6,
+  date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "Vallea Lumina",
+  description: "Join an evening excursion and follow cryptic radio transmissions and the lingering traces of two long-ago hikers to find the scenic trailhead where the real journey begins… This pathway leads toward a place filled with beauty, and proof that the legends of Whistler are true.",
+  image_url: 'https://res.cloudinary.com/whistler/image/upload/w_1200,c_scale,dpr_2.0,q_auto/v1/s3/images/header/vallea-lumina-whistler-1.jpg',
+  city: 'Whistler',
+  address: '7145 Nancy Green Drive, Whistler, 4C8 148',
+  price_per_person: 125,
+  max_number_of_participants: 10,
+  date: "12/12/2020",
+})
+
+Activity.create!({
+  title:  "Classic Cruises of Delta",
+  description: "Classic Cruises of Delta is the local favorite for sailing and power boat tours and sunset harbor cruises. Enjoy breathtaking sailing and power boat tours offering spectacular views of  Vancouver Harbor, Narragansett Bay and the excitement of the Sailing Capital of Canada.",
+  image_url: 'https://ahoybc.com/wp-content/uploads/2015/03/SC-Harmony-Islands-AlbertNormandin.jpg',
+  city: 'Delta',
+  address: '12 Marine Drive, Delta, 1B7 V0N',
+  price_per_person: 55,
+  max_number_of_participants: 8,
+  date: "08/07/2020",
+})
+
+Activity.create!({
+  title:  "Viking Tours of Delta",
+  description: "Since 1962, Viking Tours has been showing visitors to Delta the amazing history of the city. You are invited to travel from the Modern Age to the Gilded Age during one of their specialty tours. Only Viking Tours gives you an insider’s look into Vancouver aboard our old-fashioned trolleys and modern motorcoaches. Voted by the readers of Vancouver Life Magazine as Best Tour – Land, Sea or Sky 2009, 2011 & 2013!",
+  image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/12/a6/0a.jpg',
+  city: 'Delta',
+  address: '23 Lions Bay Avenue, North Vancouver, 2B7',
+  price_per_person: 45,
+  max_number_of_participants: 10,
+  date: "09/11/2020",
+})
+
+Activity.create!({
+  title:  "Delta Body Spa",
+  description: "Warm up this month with a promotion designed to help you unwind and feel refreshed. The treatment begins with a 75 minutes hot stone massage. As part of this traditional Japanese massage technique, smooth , heated stones are placed on the body's pressure points. The heat from the stones helps to loosen muscles for a more relaxed better sleep, while improving the circulation and flow of energy.
+  The spa therapist will perform a head massage to help relieve tension in the forehead and scalp areas. Relaxation and rejuvenation at its finest!",
+  image_url: 'https://gallery.mailchimp.com/dafce54ef251438f249fcbb53/images/df8b17e2-d5c1-443d-8310-2f81c83a331c.jpg',
+  city: 'Delta',
+  address: '10 Londsale Ave, Delta, 96M 1M9',
+  price_per_person: 115,
+  max_number_of_participants:2,
+  date: "04/03/2020",
+})
+
+Activity.create!({
+  title:  "Delta Archery",
+  description: "Archery has been practised for hundreds of years and there’s something extra special about drawing your bow and shooting an arrow. A noble and ancient sport, it’s a great and gentle family activity that all ages can enjoy together. You’ll receive expert tuition and guidance, ensuring your arrows are on target. Each person shoots 30 arrows and the activity lasts from 40 to 50 minutes.",
+  image_url: 'https://contents.mediadecathlon.com/p1730340/k$4d9a0ca51bc17902fc53fa69fd6792e6/discovery-junior-kids-archery-bow-red.jpg?&f=452x452',
+  city: 'Delta',
+  address: '4 Maquama Road, Delta, 1B9 4B8',
+  price_per_person: 125,
+  max_number_of_participants: 6,
+  date: "10/04/2021",
+})
+
+Activity.create!({
+  title:  "Bird and Falcons",
+  description: "Offering you the chance to enjoy magnificent wildlife and ancient woodlands, falconry is an unmissable part of the Squamish Experience. One of our guests most-loved pursuits, you’ll get up close and personal with mesmerising falcons, hawks and owls in the Delta grounds.Our Falconry School can facilitate guests’ requirements and experiences can be tailored to meet your needs, with activity duration around 1 hour and 15 minutes.",
+  image_url: 'https://www.offthegridnews.com/wp-content/uploads/2014/04/falconry-400x225.jpg',
+  city: 'Delta',
+  address: '12 Garibaldi Way, Delta, 7C0 9M9',
+  price_per_person: 135,
+  max_number_of_participants: 8,
+  date: "01/02/2021",
+})
+
+Activity.create!({
+  title:  "Fun Cooking Class",
+  description: "The objective of this class is to provide a fun 3 hour class to families of up to 4 people with at least 2 children in the group.",
+  image_url: 'https://cdn.biltmorehotel.com/assets/img/hotel/kids-cooking-classes.jpg',
+  city: 'Delta',
+  address: '245 Main Street, Delta, 2X8 T3E',
+  price_per_person: 140,
+  max_number_of_participants: 16,
+  date: "12/12/2020",
+})
+
+Activity.create!({
+  title:  'TAG Squamish',
+  description: 'The Adventure Group is Squamish’s premier year-round activity operator representing the BEST of Whistler! Only moments from downtown Squamish our team offers summer adventures including Whitewater Rafting, RZR Tours, Biking and Jet-Boating. Fly the world\'s most spectacular ziplines in Canada with Superfly Ziplines and swing from the trees in our Treetop Adventure course.',
+  image_url: 'https://s3.amazonaws.com/lmpm-wordpress-media-store-prod/wp-content/uploads/sites/2/2019/11/whistler-ziplining-summer2.jpg',
+  city: 'Squamish',
+  address: '211-4293 Mountain Square, Squamish, 9V0 1B8',
+  price_per_person: 110,
+  max_number_of_participants: 6,
+  date: "02/02/2021",
+})
+
+Activity.create!({
+  title:  "Squamish to Whistler Flight",
+  description: "Fly in style from Squamish to Whistler in a classic de Havilland seaplane. Depart from the Squamish Floatplane Centre and fly up the Sea to Sky. You’ll be treated to aerial views of the mountains and ocean on the quick, scenic flight up the coast. Arrive with plenty of time to explore the pretty alpine village of Whistler. Read more about Squamish to Whistler Scenic Flight 2020.",
+  image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/6b/55/c0.jpg',
+  city: 'Squamish',
+  address: '10 Main Street, Squamish, 96M 1M9',
+  price_per_person: 159,
+  max_number_of_participants:3,
+  date: "04/07/2021",
+})
+
+Activity.create!({
+  title:  "Tilford Garden",
+  description: "With over 150,000 lights sparkling among cedar & fir trees, glittering upon fountains and ponds, and peeping out between snow-dusted shrubs, Park & Tilford Gardens Hi-Light Festival is a lovely little holiday season spectacle. Great as a free tourist stop after visiting Squamish, the winding pathways and arched bridges provide a perfect place for sugar-saturated kids to run wild in a Christmas-bright setting, and for travelers to snap photos of coastal Canadian trees twinkling with illuminated decorations. ",
+  image_url: 'https://janinecrossblog.files.wordpress.com/2017/12/entrance-to-park-tilford-gardens.jpg',
+  city: 'Squamish',
+  address: '11 Capilano, Squamish, 9C8 1X8',
+  price_per_person: 155,
+  max_number_of_participants: 122,
+  date: "05/12/2020",
+})
+
+Activity.create!({
+  title:  "Rejunenating Body Spa",
+  description: "Warm up this month with a promotion designed to help you unwind and feel refreshed. The treatment begins with a 75 minutes hot stone massage. As part of this traditional Japanese massage technique, smooth , heated stones are placed on the body's pressure points. The heat from the stones helps to loosen muscles for a more relaxed better sleep, while improving the circulation and flow of energy.
+  The spa therapist will perform a head massage to help relieve tension in the forehead and scalp areas. Relaxation and rejuvenation at its finest!",
+  image_url: 'https://muskokaspatreatments.ca/wp-content/uploads/2019/11/309222-P83RNB-412.jpg',
+  city: 'Squamish',
+  address: '10 Londsale Ave, Squamish, 96M 1M9',
+  price_per_person: 145,
+  max_number_of_participants:2,
+  date: "04/05/2020",
+})
+
+Activity.create!({
+  title:  "Harbour Scenic Flight",
+  description: "Fly in style from Victoria Harbour over the city in a classic de Havilland seaplane. Depart from the  Floatplane Centre.. You’ll be treated to aerial views of the mountains and ocean on the quick, scenic flight up the coast. ",
+  image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/6b/55/c0.jpg',
+  city: 'Victoria',
+  address: '10 Main Street, Victoria, 96M 1M9',
+  price_per_person: 39,
+  max_number_of_participants:4,
+  date: "04/07/2021",
+})
+
+Activity.create!({
+  title:  "Elizabeth Winter Garden",
+  description: "With over 150,000 lights sparkling among cedar & fir trees, glittering upon fountains and ponds, and peeping out between snow-dusted shrubs, Elizabeth Gardens Hi-Light Festival is a lovely little holiday season spectacle. Great as a free tourist stop after visiting Victoria, the winding pathways and arched bridges provide a perfect place for sugar-saturated kids to run wild in a Christmas-bright setting, and for travelers to snap photos of coastal Canadian trees twinkling with illuminated decorations. ",
+  image_url: 'https://janinecrossblog.files.wordpress.com/2017/12/entrance-to-park-tilford-gardens.jpg',
+  city: 'Victoria',
+  address: '11 Capilano, Victoria, 9C8 1X8',
+  price_per_person: 19,
+  max_number_of_participants: 18,
+  date: "05/07/2020",
+})
+
+Activity.create!({
+  title:  "Scalp Massage",
+  description: "Warm up this month with a promotion designed to help you unwind and feel refreshed. The treatment begins with a 75 minutes hot stone massage. As part of this traditional Japanese massage technique, smooth , heated stones are placed on the body's pressure points. The heat from the stones helps to loosen muscles for a more relaxed better sleep, while improving the circulation and flow of energy.
+  The spa therapist will perform a head massage to help relieve tension in the forehead and scalp areas. Relaxation and rejuvenation at its finest!",
+  image_url: 'https://muskokaspatreatments.ca/wp-content/uploads/2019/11/309222-P83RNB-412.jpg',
+  city: 'Victoria',
+  address: '10 Londsale Ave, Victoria, 96M 1M9',
+  price_per_person: 39,
+  max_number_of_participants:2,
+  date: "09/05/2020",
+})
+
+Activity.create!({
+  title:  "Victoria Food Tour",
+  description: "We are here to provide first class hospitality and tender loving care of our guests while sharing our passion for the world’s best food producers, markets, artisans, chefs and restaurants in a fun manner whether we are guiding someone on a walking tour in our home base of Victoria, BC or leading an adventure to the world’s most fascinating culinary destinations.",
+  image_url: 'https://assets.simpleviewinc.com/simpleview/image/upload/crm/vancouverbc/Gastronomic-Gastown-Tour---Six-Acres-2_80BDB59B-3E2F-4EB7-8A746C30C0E53DB6_ea21920b-e45d-4681-9d2707814823d065.jpg',
+  city: 'Victoria',
+  address: '11 Bilam Stree, Victoria, 9C8 1X8',
+  price_per_person: 75,
+  max_number_of_participants: 12,
+  date: "09/010/2021",
+})
+
+Activity.create!({
+  title:  "Carmindee Auditorium",
+  description: "The Jubilee offers amazing events and spectacular shows throughout the year including the Opera, the BC Ballet, concerts and the Philharmonic Orchestra. Many shows are available at the Jubilee Auditorium. Guests can easily commute to the Jubilee with a 5 minute walk to the waterfront C-train and a 2 minute train ride right to the auditorium.",
+  image_url: 'https://static1.squarespace.com/static/5a4c8f0c12abd9756b9bc6da/5a4cbf250d929722a0ea2646/5a5c12e071c10bca1334e577/1515984094306/SAJA.png?format=1500w',
+  city: 'Victoria',
+  address: '10 Capilano Avenue, Victoria, 2k8 1B8',
+  price_per_person: 75,
+  max_number_of_participants: 6,
+  date: "03/04/2021",
+})
+
+Activity.create!({
+  title:  "Mary Hall & Arts",
+  description: "Come and see an orchestrated evening with the Victoria Philharmonic Orchestra, special guests, concerts and the theatre! See the website for more information about special shows, the orchestra and dining options at Arts Commons, located in the heart of downtown at Olympic Plaza.",
+  image_url: 'https://www.ticketcity.com/cdn-cgi/image/quality=70,format=auto,fit=cover,gravity=center/imglib/concert/51/66382/default.jpg',
+  city: 'Victoria',
+  address: '19 Georgia Street, Victoria, 9V7 1X8',
+  price_per_person: 66,
+  max_number_of_participants: 14,
+  date: "07/11/2020",
+})
+
+Activity.create!({
+  title:  "Island Spa",
+  description: "Warm up this month with a promotion designed to help you unwind and feel refreshed. The treatment begins with a 75 minutes hot stone massage. As part of this traditional Japanese massage technique, smooth , heated stones are placed on the body's pressure points. The heat from the stones helps to loosen muscles for a more relaxed better sleep, while improving the circulation and flow of energy.
+  The spa therapist will perform a head massage to help relieve tension in the forehead and scalp areas. Relaxation and rejuvenation at its finest!",
+  image_url: 'https://gallery.mailchimp.com/dafce54ef251438f249fcbb53/images/df8b17e2-d5c1-443d-8310-2f81c83a331c.jpg',
+  city: 'Victoria',
+  address: '10 Londsale Ave, Victoria, 96M 1M9',
+  price_per_person: 115,
+  max_number_of_participants:3,
+  date: "04/09/2020",
+})
+
+Activity.create!({
+  title:  "Victoria Sky Diving Tandem",
+  description: "Offers first time Tandem Skydiving, this is the safest, most enjoyable way to experience Skydiving. Our Accelerated Freefall Program offers full courses for those who wish to learn to Solo Skydive . All of our Tandem Skydives are done with an experienced and qualified Tandem Instructors  at our Abbotsford Skydive Centre located about 45 minutes drive East of Downtown Vancouver.",
+  image_url: 'https://media-cdn.tripadvisor.com/media/photo-o/0f/6e/df/b6/skydive-vancouver.jpg',
+  city: 'Victoria',
+  address: '11 Capilano, Victoria, 9C8 1X8',
+  price_per_person: 119,
+  max_number_of_participants: 4,
+  date: "05/11/2020",
+})
+
+Activity.create!({
+  title:  "Tours of Victoria",
+  description: "Since 1962, Viking Tours has been showing visitors to Victoria the amazing history of the city. You are invited to travel from the Modern Age to the Gilded Age during one of their specialty tours. Only Viking Tours gives you an insider’s look into Victoria aboard our old-fashioned trolleys and modern motorcoaches. Voted by the readers of Victoria Life Magazine as Best Tour – Land, Sea or Sky 2009, 2011 & 2013!",
+  image_url: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/12/a6/0a.jpg',
+  city: 'Victoria',
+  address: '23 Lions Bay Avenue, Victoria, 2B7',
+  price_per_person: 128,
+  max_number_of_participants: 10,
+  date: "09/18/2020",
+})
+
+Activity.create!({
+  title:  "Victoria National Golf Club",
+  description: "Designed by legendary golf architect Arthur Hills and his associate Drew Rogers, the Orchard Course at Victoria National Golf Club spans almost 200 acres of former shrub and tree nurseries that offer sweeping views of Vancouver Island.",
+  image_url: 'https://golfadvisor.brightspotcdn.com/dims4/default/7a3d798/2147483647/strip/true/crop/1210x781+0+13/resize/930x600!/quality/90/?url=https%3A%2F%2Fgolfadvisor.brightspotcdn.com%2Ffe%2F8e%2F401fcb3d5aea6ca2dde7573a978b%2F52243.jpg',
+  city: 'Victoria',
+  address: '15 University Avenue, Victoria, A7B 8YC',
+  price_per_person: 154,
+  max_number_of_participants: 4,
+  date: "06/06/2021",
+})
+
+Activity.create!({
+  title:  "Victoria Tennis Hall",
+  description: "Discover the history of tennis and its superstars through a diverse collection of memorabilia, art, video & more from the 12th century through today. The Museum is housed within stunning Victorian architecture and surrounded by grass tennis courts.",
+  image_url: 'https://cdn.guestfolio.net/system/listing/images/000/012/991/default.jpg?1392281171',
+  city: 'Victoria',
+  address: '28 George Street, Victoria, 2B7 1Z9',
+  price_per_person: 125,
+  max_number_of_participants: 10,
+  date: "03/05/2020",
 })
 
 ## BOOKINGS
