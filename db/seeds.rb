@@ -966,25 +966,25 @@ al.bookings.create!({
   price_per_person: 85
 })
 
-al.bookings.create!({
-  activity_id: act5.id,
-  number_of_participants: 8,
-  price_per_person: 10
-})
+# al.bookings.create!({
+#   activity_id: act5.id,
+#   number_of_participants: 8,
+#   price_per_person: 10
+# })
 
-al.bookings.create!({
-  activity_id: act6.id,
-  number_of_participants: 2,
-  price_per_person: 100
-})
+# al.bookings.create!({
+#   activity_id: act6.id,
+#   number_of_participants: 2,
+#   price_per_person: 100
+# })
 
-al.bookings.create!({
-  activity_id: act4.id,
-  number_of_participants: 10,
-  price_per_person: 47
-})
+# al.bookings.create!({
+#   activity_id: act4.id,
+#   number_of_participants: 10,
+#   price_per_person: 47
+# })
 
-## FAVORITES
+ ## FAVORITES
 Favorite.destroy_all
 
 al.favorites.create!(activity_id: act2.id)
@@ -993,16 +993,16 @@ al.favorites.create!(activity_id: act1.id)
 
 al.favorites.create!(activity_id: act3.id)
 
-al.favorites.create!(activity_id: act8.id)
+# al.favorites.create!(activity_id: act8.id)
 
-al.favorites.create!(activity_id: act5.id)
+# al.favorites.create!(activity_id: act5.id)
 
-al.favorites.create!(activity_id: act7.id)
+# al.favorites.create!(activity_id: act7.id)
 
-al.favorites.create!(activity_id: act10.id)
+# al.favorites.create!(activity_id: act10.id)
 
-al.favorites.create!(activity_id: act4.id)
+# al.favorites.create!(activity_id: act4.id)
 
-al.favorites.create!(activity_id: act9.id)
+# al.favorites.create!(activity_id: act9.id)
 
-al.favorites.create!(activity_id: act6.id)
+# al.favorites.create!(activity_id: act6.id)
