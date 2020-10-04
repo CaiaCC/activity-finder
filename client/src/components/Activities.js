@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button } from 'react-bootstrap'
 import { Dropdown } from 'react-bootstrap'
 import Banner from './Banner'
-import { Button, CardColumns, Container, Spinner } from 'react-bootstrap'
+import { Button, CardColumns, Container, Spinner, Alert } from 'react-bootstrap'
 
 function Activities(props) {
 
@@ -94,7 +94,7 @@ function Activities(props) {
         </Spinner>
         <span className='spinner-text'>loading activities</span>
         </Button>
-      </div>}  
+      </div>}
       <Container>
         <CardColumns>
           {activityList}
