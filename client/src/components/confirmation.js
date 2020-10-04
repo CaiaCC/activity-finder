@@ -22,7 +22,7 @@ function Confirmation(props) {
         setTitle(res.data.title)
         setIndividualPrice(res.data.price_per_person)
         setMaxPeople(res.data.max_number_of_participants)
-        // setDate(res.data.date)
+        setDate(res.data.date)
       })
 
       .catch(res => console.log(res))
@@ -65,7 +65,7 @@ function Confirmation(props) {
         {peopleSelected === 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
         <row><h3 className='total-price'>Total price : ${price}.00</h3></row>
         <div className='button-group'>
-          <Link to={{pathname:"/bookings", data:[title]}}>
+          <Link to={{pathname:"/bookings", data:[title,date]}}>
             <Button variant="warning" onClick={exception}>Confirm your booking</Button>{' '}
           </Link>
           <Link to={backLink}>
