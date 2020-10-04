@@ -10,20 +10,24 @@ import { Button, CardColumns, Container, Spinner, Alert } from 'react-bootstrap'
 
 function Activities(props) {
 
-  const [state, setState] = useState( "Let's go!" )
+  const [state, setState] = useState( "Let's explore!" )
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
   const [priceRange, setPriceRange] = useState('Your Ideal Price Range')
   const [status, setStatus] = useState('')
 
-  const fetchData = () => {
+  const fetchData = (event) => {
+    if(city === 'Choose Your City' || priceRange === 'Your Ideal Price Range'){
+      event.preventDefault();
+    } else {
     axios.get('/api/activities')
       .then((response) => {
         setStatus('loading')
         console.log(response) // The entire response from the Rails API
-        setActivities(response.data) //The first activity
+        setActivities(response.data) //fetch all activities
         setState();
       })
+    }
   }
   console.log(city);
   const inRange = (item) => {
