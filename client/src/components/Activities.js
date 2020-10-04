@@ -9,7 +9,6 @@ import Activity from "./Activity"
 import Banner from './Banner'
 
 function Activities(props) {
-
   const [state, setState] = useState({ message: "Find An Activity Nearby!" })
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
@@ -43,7 +42,6 @@ function Activities(props) {
   })
 
   return (
-
     <>
       <Banner>
         <div className="search-box">
@@ -80,7 +78,6 @@ function Activities(props) {
             </Button>
           </div>
         </div>
-
       </Banner>
       <div className="App">
         <h1>Let's go!</h1>
@@ -90,7 +87,6 @@ function Activities(props) {
           {activityList}
         </CardColumns>
       </Container>
-
     </>
   )
 }

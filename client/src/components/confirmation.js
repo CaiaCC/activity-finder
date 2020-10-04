@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Button, Alert, Container } from "react-bootstrap"
 import { Link } from 'react-router-dom'
+
+import { Button, Alert, Container } from "react-bootstrap"
 import '../css/confirmation.css'
+
 import useBookingData from '../hooks/useBookingData'
 
 function Confirmation(props) {
@@ -23,9 +25,7 @@ function Confirmation(props) {
         setIndividualPrice(res.data.price_per_person)
         setMaxPeople(res.data.max_number_of_participants)
       })
-
       .catch(res => console.log(res))
-
   }, [])
 
   const exception = (event) => {
@@ -34,7 +34,6 @@ function Confirmation(props) {
     } else {
       createBooking(id, individualPrice, peopleSelected)
     }
-
   }
 
   const id = props.match.params.id
@@ -74,8 +73,6 @@ function Confirmation(props) {
       </Container>
     </>
   )
-
 }
-
 
 export default Confirmation

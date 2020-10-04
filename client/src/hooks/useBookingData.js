@@ -30,7 +30,6 @@ export default function useBookingData() {
   }
   
   function createBooking(activityId, pricePerPerson, numberOfPeople) {
-
     const newBooking = {
       number_of_participants: numberOfPeople, 
       price_per_person: pricePerPerson, 

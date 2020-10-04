@@ -15,13 +15,13 @@ export default function FavoriteItems(props) {
     const favoriteId = favorites.filter(obj => obj.activity_id === favoredActivityId)[0].id
 		const activityUrl = `/activities/${favoredActivityId}`;
 		const spots = spotsRemaining(favoredActivity);
-    console.log(typeof favoredActivity.bookings.length)
+
     function destroy(favoriteId) {
       return cancelFavorite(favoriteId)
       .then(res => console.log("favorite cancelled"))
 			.catch(err => console.log("favorite cancel err: ", err))
-			
     }
+
     function getDate(){
       let today = new Date();
       let dd = String(today.getDate()).padStart(2, '0');
@@ -35,8 +35,8 @@ export default function FavoriteItems(props) {
       <tr key={index}>
         <td>{favoredActivity.title}</td>
         {getDate()<favoredActivity.date?
-        <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
-        <td><Badge variant="danger">Expired</Badge>{' '}</td>
+          <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
+          <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
         <td>{spots}</td>
         <td>{favoredActivity.date}</td>
@@ -52,6 +52,7 @@ export default function FavoriteItems(props) {
         </td>
       </tr>
     )
-	})
+  })
+  
 	return (<>{favoredItems}</>)
 }

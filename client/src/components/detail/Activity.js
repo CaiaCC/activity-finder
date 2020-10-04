@@ -64,21 +64,17 @@ function Activity(props) {
       <Container>
         { isBooked(bookings) &&  
           <Alert variant='primary'>
-          You already booked this activity, please check it out on 
-          <Alert.Link href="/bookings"> My bookings</Alert.Link> page.
-        </Alert>
+            You already booked this activity, please check it out on 
+            <Alert.Link href="/bookings"> My bookings</Alert.Link> page.
+          </Alert>
         }
         { isFavored(favorites) &&  
           <Alert variant='primary'>
-          You already added this activity to 
-          <Alert.Link href="/favorites"> My favorites</Alert.Link>.
-        </Alert>
+            You already added this activity to 
+            <Alert.Link href="/favorites"> My favorites</Alert.Link>.
+          </Alert>
         }
-        { spots === 0 &&  
-          <Alert variant='danger'>
-          No more spots available for this activity.
-        </Alert>
-        }
+        { spots === 0 && <Alert variant='danger'>No more spots available for this activity.</Alert> }
         <Row>
           <Col>
             <div className='info'>
@@ -103,7 +99,6 @@ function Activity(props) {
               }
             </div>
           </Col>
-
           <Col>
             <div className='image'><img src={activity.image_url} alt={activity.title}></img></div>
           </Col>
@@ -112,11 +107,8 @@ function Activity(props) {
           <Col>
             <div className='description'>{activity.description}</div>
           </Col>
-
         </Row>
-
       </Container>
-
     </>
   )
 }

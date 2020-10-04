@@ -30,7 +30,6 @@ export default function useFavoriteData() {
   };
   
   const createFavorite = activity_id => {
-    console.log("in create fav function", favoredActivities)
     if(!favoredActivities.includes(activity_id)) {
       const newFavorite = {
         user_id: 1, 
@@ -42,7 +41,6 @@ export default function useFavoriteData() {
       .then(() => getFavoredActivities())
       .catch(err => console.log('Err form post favorite request: ', err))
     }
-    
   }
   
   return { favorites, favoredActivities, cancelFavorite, createFavorite, getFavoredActivities };

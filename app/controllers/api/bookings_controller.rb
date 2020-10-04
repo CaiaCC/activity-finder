@@ -19,7 +19,6 @@ class Api::BookingsController < ApplicationController
     booking.destroy
   end
   
-  
   private
   def booking_params
     params.require(:booking).permit(:user_id, :activity_id, :number_of_participants, :price_per_person)

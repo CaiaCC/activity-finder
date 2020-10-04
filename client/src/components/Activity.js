@@ -18,7 +18,6 @@ function Activity(props) {
           <Card.Text>
             {props.item.description.substring(0, 100,)}..
           </Card.Text>
-
           <Card.Text>
             Spots remaining: {spots}
           </Card.Text>
@@ -27,7 +26,6 @@ function Activity(props) {
           </Link>
         </Card.Body>
       </Card>
-
     </>
   )
 }

@@ -5,10 +5,10 @@ export default function spotsRemaining(activity) {
 	if (!Array.isArray(bookings) || !bookings.length ) {return spotLeft}
 
 	const { number_of_participants } = bookings[0];
-	spotLeft -= number_of_participants
+	spotLeft -= number_of_participants;
 	
 	if (spotLeft < 0) {
-		return 0
+		return 0;
 	} else {
 		return spotLeft;
 	}
