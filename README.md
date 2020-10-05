@@ -12,10 +12,27 @@ The database is stored in db folder, which contains migrate files, schema files,
 
 The front-ends are located in client folder, which contains component  and css files.
 
-The main important bit is that the React project has `proxy` set to `localhost:3001` in the `package.json` file. Take a look!
+The front-end of this app has `proxy` set to `localhost:3001` in the `package.json` file. For back-end, the dependencies are stored in `Gemfile`.
 
 ## Final products:
 
+Home page with welcoming text and dropdowns for search:
+![home]()
+
+Searched activities given city and budgets:
+![home-search](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home-search.png?raw=true)
+
+Detail pages for individual activity:
+![detail](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/detail.png?raw=true)
+
+Confirmation page for either booking or adding to favorite list:
+![confirmation](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/confirmation.png?raw=true)
+
+Booking page: user can add activities or delete activities from this page:
+![booking](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/bookings.png?raw=true)
+
+Favorite page: user can go to detail page of each acitvity or book each activity from this page:
+![favorite](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/favorite.png?raw=true)
 
 
 ## Using the boilerplate
