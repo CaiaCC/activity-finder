@@ -8,10 +8,9 @@ import useBookingData from '../hooks/useBookingData'
 export default function Bookings() {
   const { bookings, bookedActivities, cancelBooking } = useBookingData();
   
-  const bookedItems = bookedActivities.map(bookedActivity => {
+  const bookedItems = bookedActivities.map((bookedActivity, index) => {
     const bookedActivityId = bookedActivity.id
     const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
-    console.log(booking)
     const spotReserved = booking.number_of_participants 
     const bookingId = booking.id
     
@@ -20,6 +19,7 @@ export default function Bookings() {
       .then(res => console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
     }
+
     function getDate(){
       let today = new Date();
       let dd = String(today.getDate()).padStart(2, '0');
@@ -30,11 +30,11 @@ export default function Bookings() {
     }
 
     return (
-      <tr key={bookedActivityId}>
+      <tr key={index}>
         <td>{bookedActivity.title}</td>
-        {getDate()<bookedActivity.date?
-        <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
-        <td><Badge variant="danger">Expired</Badge>{' '}</td>
+        { getDate() < bookedActivity.date?
+          <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
+          <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
         <td>{spotReserved}</td>
         <td>{bookedActivity.date}</td>
@@ -46,6 +46,7 @@ export default function Bookings() {
       </tr>
     )
   })
+  
   return (
     <>
       <Container className="list-box">
