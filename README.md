@@ -1,25 +1,22 @@
-## NOTE: This repo has not been updated in a while.
+# Activity Finder:
 
-You may find that the versions of React, Rails, and Ruby are _NOT_ the most current. Feel free to update this repo and make a PR with new versions. Also, please let me know if you run into any bugs.
+This app is for people to search available activities nearby by typing in their cities and ideal budgets. User is able to add/delete book activites from searched activities or save activites for later booking.
 
-# React + Rails No-Fluff Boilerplate
+## Stack:
 
-A boilerplate project for anyone interested in making a project that uses React and Rails.
+This project uses Ruby on Rails as back-end, and React as front-end for rendering.
 
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff.
+The back-ends are stored in app folder, which has models, serializers, controllers for different resources. 
+
+The database is stored in db folder, which contains migrate files, schema files, and seeds files.
+
+The front-ends are located in client folder, which contains component  and css files.
 
 The main important bit is that the React project has `proxy` set to `localhost:3001` in the `package.json` file. Take a look!
 
-## Hall of Fame
+## Final products:
 
-Here are some projects that have been built using this boilerplate.
 
-- [latercart](https://github.com/bonitac/latercart)
-- [Cards-Against-the-Internet](https://github.com/csx773/Cards-Against-the-Internet)
-- [Jetify](https://github.com/shadeying/Jetify)
-- [watchpoll](https://github.com/grey275/watchpoll)
-- [StartDuck](https://github.com/JerChuang/StartDuck)
-- [Change-App](https://github.com/ZHShang/Change-App)
 
 ## Using the boilerplate
 
