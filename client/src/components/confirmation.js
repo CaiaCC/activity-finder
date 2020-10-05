@@ -14,6 +14,7 @@ function Confirmation(props) {
   const [maxPeople, setMaxPeople] = useState(0)
   const [peopleSelected, setPeopleSelected] = useState(0)
   const { createBooking } = useBookingData()
+  const [date, setDate] = useState('')
 
   useEffect(() => {
     const id = props.match.params.id;
@@ -21,9 +22,9 @@ function Confirmation(props) {
     axios.get(url)
       .then(res => {
         setTitle(res.data.title)
-        console.log(res)
         setIndividualPrice(res.data.price_per_person)
         setMaxPeople(res.data.max_number_of_participants)
+        setDate(res.data.date)
       })
       .catch(res => console.log(res))
   }, [])
@@ -38,7 +39,7 @@ function Confirmation(props) {
 
   const id = props.match.params.id
   const backLink = `/activities/${id}`
-  console.log(maxPeople)
+
   return (
     <>
       <Container>
@@ -60,10 +61,10 @@ function Confirmation(props) {
           />
         </row>
         {peopleSelected > maxPeople && <Alert variant='danger' className='error-max'>Exceeds the maximum number of spots available on that day</Alert>}
-        {peopleSelected == 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
+        {peopleSelected === 0 && <Alert variant='light' className='error-min'>You must select at least one spot</Alert>}
         <row><h3 className='total-price'>Total price : ${price}.00</h3></row>
         <div className='button-group'>
-          <Link to='/bookings'>
+          <Link to={{pathname:"/bookings", data:[title,date]}}>
             <Button variant="warning" onClick={exception}>Confirm your booking</Button>{' '}
           </Link>
           <Link to={backLink}>

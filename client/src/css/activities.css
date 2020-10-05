@@ -29,3 +29,15 @@ img{
   justify-content: center;
   align-items: center;
 }
+
+.spinner-container{
+  display:flex;
+  justify-content: center;
+}
+.spinner-text{
+  margin-bottom: 50px;
+  /* border: 1px solid black; */
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: larger;
+}

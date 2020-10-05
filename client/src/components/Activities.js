@@ -9,18 +9,23 @@ import Activity from "./Activity"
 import Banner from './Banner'
 
 function Activities(props) {
-  const [state, setState] = useState({ message: "Find An Activity Nearby!" })
+
+  const [state, setState] = useState( "Let's explore!" )
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
   const [priceRange, setPriceRange] = useState('Your Ideal Price Range')
 
-  const fetchData = () => {
+  const fetchData = (event) => {
+    if(city === 'Choose Your City' || priceRange === 'Your Ideal Price Range'){
+      event.preventDefault();
+    } else {
     axios.get('/api/activities')
       .then((response) => {
         console.log(response) // The entire response from the Rails API
-        setActivities(response.data) //The first activity
-        setState({});
+        setActivities(response.data) //fetch all activities
+        setState();
       })
+    }
   }
   console.log(city);
   const inRange = (item) => {
@@ -80,7 +85,7 @@ function Activities(props) {
         </div>
       </Banner>
       <div className="App">
-        <h1>Let's go!</h1>
+        <h1>{state}</h1>
       </div>
       <Container>
         <CardColumns>
