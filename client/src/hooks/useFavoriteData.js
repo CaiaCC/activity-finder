@@ -21,6 +21,10 @@ export default function useFavoriteData() {
     return axios.get('/api/activities/user/1/favored')
     .then(res => setFavoredActivities(res.data))
   };
+  const getFavorites = () => {
+    return axios.get('/api/users/1/favorites')
+    .then(res => setFavorites(res.data))
+  }
 
   const cancelFavorite = favoriteId => {
     return axios.delete(`/api/users/1/favorites/${favoriteId}`)
@@ -41,6 +45,7 @@ export default function useFavoriteData() {
 
       return axios.post('/api/users/1/favorites', newFavorite)
       .then(res => console.log('Sent post favorite request'))
+      .then(getFavorites())
       .then(() => getFavoredActivities())
       .catch(err => console.log('Err form post favorite request: ', err))
     }
