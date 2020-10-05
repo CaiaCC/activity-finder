@@ -74,7 +74,7 @@ export default function Bookings(props) {
               <th>Status</th>
               <th>Spots Reserved</th>
               <th>Date</th>
-              <th>Cancelation</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
