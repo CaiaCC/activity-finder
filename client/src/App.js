@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import NavigBar from './components/Navbar';
-import Banner from './components/Banner';
 import Activities from './components/Activities';
 import Activity from './components/detail/Activity'
 import Bookings from './components/Bookings';
@@ -17,8 +16,6 @@ function App() {
   return (
     <Router>
       <NavigBar></NavigBar>
-      
-
       <Switch>
         <Route exact path='/favorites' component={Favorites}/>
         <Route exact path='/bookings' component={Bookings}/>
@@ -26,7 +23,6 @@ function App() {
         <Route exact path='/activities/:id' component={Activity} />
         <Route exact path="/activities/:id/confirmation" component={Confirmation}/>
       </Switch>
-
       <Footer></Footer>
     </Router>
   )

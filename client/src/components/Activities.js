@@ -1,12 +1,12 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import Activity from "./Activity"
+
 import "../css/activities.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Button } from 'react-bootstrap'
-import { Dropdown } from 'react-bootstrap'
+import { Button, CardColumns, Container, Dropdown } from 'react-bootstrap'
+
+import Activity from "./Activity"
 import Banner from './Banner'
-import { Button, CardColumns, Container } from 'react-bootstrap'
 
 function Activities(props) {
 
@@ -47,7 +47,6 @@ function Activities(props) {
   })
 
   return (
-
     <>
       <Banner>
         <div className="search-box">
@@ -81,10 +80,9 @@ function Activities(props) {
             </Dropdown>
             <Button id="search-button" variant="primary" onClick={fetchData} >
               Search activities nearby
-      </Button>
+            </Button>
           </div>
         </div>
-
       </Banner>
       <div className="App">
         <h1>{state}</h1>
@@ -94,7 +92,6 @@ function Activities(props) {
           {activityList}
         </CardColumns>
       </Container>
-
     </>
   )
 }

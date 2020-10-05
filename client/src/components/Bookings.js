@@ -21,7 +21,7 @@ export default function Bookings(props) {
      activityDate=props.location.data[1]
   }
   
-  const bookedItems = bookedActivities.map(bookedActivity => {
+  const bookedItems = bookedActivities.map((bookedActivity, index) => {
     const bookedActivityId = bookedActivity.id
     const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
     const spotReserved = booking.number_of_participants 
@@ -32,6 +32,7 @@ export default function Bookings(props) {
       .then(res => console.log("booking cancelled"))
       .catch(err => console.log("booking cancel err: ", err))
     }
+
     function getDate(){
       let today = new Date();
       let dd = String(today.getDate()).padStart(2, '0');
@@ -43,11 +44,11 @@ export default function Bookings(props) {
 
     
     return (
-      <tr key={bookedActivityId}>
+      <tr key={index}>
         <td>{bookedActivity.title}</td>
-        {getDate()<bookedActivity.date?
-        <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
-        <td><Badge variant="danger">Expired</Badge>{' '}</td>
+        { getDate() < bookedActivity.date?
+          <td><Badge variant="success">Upcoming</Badge>{' '}</td>:
+          <td><Badge variant="danger">Expired</Badge>{' '}</td>
         }
         <td>{spotReserved}</td>
         <td>{bookedActivity.date}</td>
@@ -59,6 +60,7 @@ export default function Bookings(props) {
       </tr>
     )
   })
+  
   return (
     <>
 

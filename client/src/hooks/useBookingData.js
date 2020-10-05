@@ -15,12 +15,15 @@ export default function useBookingData() {
       setBookedActivities(all[1].data);
       })
     .catch(err => console.log("useBookingData.js err: ", err))
-  }, [bookings.length])
+  }, [])
   
   const getBookedActivities = () => {
     return axios.get('/api/activities/user/1/booked')
-    .then(res => setBookedActivities(res.data))
-    
+    .then(res => setBookedActivities(res.data)) 
+  };
+  const getBookings = () => {
+    return axios.get('/api/users/1/bookings')
+    .then(res => setBookings(res.data)) 
   };
 
   function cancelBooking(bookingId) {
@@ -31,17 +34,22 @@ export default function useBookingData() {
   }
   
   function createBooking(activityId, pricePerPerson, numberOfPeople) {
-    const newBooking = {
-      number_of_participants: numberOfPeople, 
-      price_per_person: pricePerPerson, 
-      user_id: 1, 
-      activity_id: activityId
+    const existBooking = bookedActivities.filter(obj => obj.activity_id === activityId);
+    
+    if (existBooking.length === 0) {
+      const newBooking = {
+        number_of_participants: numberOfPeople, 
+        price_per_person: pricePerPerson, 
+        user_id: 1, 
+        activity_id: activityId
+      }
+  
+      return axios.post('/api/users/1/bookings', newBooking)
+      .then(res => console.log('Sent post booking request'))
+      .then(getBookings())
+      .then(() => getBookedActivities())
+      .catch(err => console.log('Err form post booking request: ', err))
     }
-
-    return axios.post('/api/users/1/bookings', newBooking)
-    .then(res => console.log('Sent post booking request'))
-    .then(() => getBookedActivities())
-    .catch(err => console.log('Err form post booking request: ', err))
 
   }
   return {bookings, bookedActivities, cancelBooking, createBooking}
