@@ -30,7 +30,10 @@ export default function useFavoriteData() {
   };
   
   const createFavorite = activity_id => {
-    if(!favoredActivities.includes(activity_id)) {
+    const existActivity = favoredActivities.filter(obj => obj.activity_id === activity_id);
+    if(existActivity.length === 0) {
+      console.log("favoriteActivities did not include: ")
+
       const newFavorite = {
         user_id: 1, 
         activity_id: activity_id
