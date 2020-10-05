@@ -4,7 +4,7 @@ This app is for people to search available activities nearby by typing in their 
 
 ## Stacks:
 
-This project uses Ruby on Rails as back-end, and React as front-end.
+This project uses `Ruby on Rails` as back-end, and `React` as front-end.
 
 The back-ends are stored in `app` folder, which has models, serializers, controllers for different resources. 
 
