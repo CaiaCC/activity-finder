@@ -15,7 +15,7 @@ export default function useBookingData() {
       setBookedActivities(all[1].data);
       })
     .catch(err => console.log("useBookingData.js err: ", err))
-  }, [bookings.length])
+  }, [])
   
   const getBookedActivities = () => {
     return axios.get('/api/activities/user/1/booked')

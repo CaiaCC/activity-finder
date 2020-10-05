@@ -15,7 +15,7 @@ export default function useFavoriteData() {
       setFavoredActivities(all[1].data);
     })
     .catch(err => console.log("getStates err: ", err))
-  }, [favorites.length]);
+  }, []);
 
   const getFavoredActivities = () => {
     return axios.get('/api/activities/user/1/favored')
