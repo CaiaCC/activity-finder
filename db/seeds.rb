@@ -168,7 +168,7 @@ Activity.create!({
   address: '23 Canada Way, Vancouver, V4T 0E2',
   price_per_person: 19,
   max_number_of_participants: 20,
-  date: "09/08/2020",
+  date: "09/11/2020",
 })
 
 Activity.create!({
@@ -322,7 +322,7 @@ Activity.create!({
   address: '23 Lions Bay Avenue, North Vancouver, 2B7',
   price_per_person: 37,
   max_number_of_participants: 10,
-  date: "09/11/2020",
+  date: "09/12/2020",
 })
 
 Activity.create!({
@@ -333,7 +333,7 @@ Activity.create!({
   address: '15 University Avenue, Vancouver, A7B 8YC',
   price_per_person: 115,
   max_number_of_participants: 12,
-  date: "06/08/2020",
+  date: "06/02/2021",
 })
 
 Activity.create!({
@@ -707,7 +707,7 @@ Activity.create!({
   address: '7145 Nancy Green Drive, Whistler, 4C8 148',
   price_per_person: 125,
   max_number_of_participants: 10,
-  date: "12/12/2020",
+  date: "20/12/2020",
 })
 
 Activity.create!({
@@ -741,7 +741,7 @@ Activity.create!({
   address: '10 Londsale Ave, Delta, 96M 1M9',
   price_per_person: 115,
   max_number_of_participants:2,
-  date: "04/03/2020",
+  date: "04/11/2020",
 })
 
 Activity.create!({
@@ -774,7 +774,7 @@ Activity.create!({
   address: '245 Main Street, Delta, 2X8 T3E',
   price_per_person: 140,
   max_number_of_participants: 16,
-  date: "12/12/2020",
+  date: "12/10/2020",
 })
 
 Activity.create!({
@@ -864,7 +864,7 @@ Activity.create!({
   address: '11 Bilam Stree, Victoria, 9C8 1X8',
   price_per_person: 75,
   max_number_of_participants: 12,
-  date: "09/010/2021",
+  date: "09/10/2020",
 })
 
 Activity.create!({
@@ -875,7 +875,7 @@ Activity.create!({
   address: '10 Capilano Avenue, Victoria, 2k8 1B8',
   price_per_person: 75,
   max_number_of_participants: 6,
-  date: "03/04/2021",
+  date: "03/11/2020",
 })
 
 Activity.create!({
@@ -920,7 +920,7 @@ Activity.create!({
   address: '23 Lions Bay Avenue, Victoria, 2B7',
   price_per_person: 128,
   max_number_of_participants: 10,
-  date: "09/18/2020",
+  date: "09/11/2020",
 })
 
 Activity.create!({
