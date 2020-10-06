@@ -21,22 +21,22 @@ ActivityGO allows users to do a quick search instead of having to scroll through
 
 ### Home page with welcoming text and dropdowns for search:
 
-![Homepage](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home.png?raw=true)
+![Homepage](https://github.com/97-Jeffrey/activity-finder/blob/master/docs/home.png?raw=true)
 
 ### Search results:
-![Search result](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home-search.png?raw=true)
+![Search result](https://github.com/97-Jeffrey/activity-finder/blob/master/docs/home-search.png?raw=true)
 
 ### Detail page for individual activity to either book or add to favorites:
-![Detail page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/detail.png?raw=true)
+![Detail page](https://github.com/97-Jeffrey/activity-finder/blob/master/docs/detail.png?raw=true)
 
 ### Confirmation page for booking:
-![Confirmation page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/confirmation.png?raw=true)
+![Confirmation page](https://github.com/97-Jeffrey/activity-finder/blob/master/docs/confirmation.png?raw=true)
 
 ### Booking page to view list of booked activities:
-![Booking page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/bookings.png?raw=true)
+![Booking page](https://github.com/97-Jeffrey/activity-finder/blob/master/docs/bookings.png?raw=true)
 
 ### Favorite page to view list of activities added to favorites:
-![Favorite page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/favorite.png?raw=true)
+![Favorite page](https://github.com/97-Jeffrey/activity-finder/blob/master/docs/favorite.png?raw=true)
 
 
 ## Setup
