@@ -19,24 +19,24 @@ ActivityGO allows users to do a quick search instead of having to scroll through
 
 ## Final products:
 
-**Home page with welcoming text and dropdowns for search:**
+### Home page with welcoming text and dropdowns for search:
 
 ![Homepage](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home.png?raw=true)
 
-Searched activities lists given city and budgets:
-![home-search](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home-search.png?raw=true)
+### Search results:
+![Search result](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home-search.png?raw=true)
 
-Detail pages for individual activity to either book or add to favorites:
-![detail](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/detail.png?raw=true)
+### Detail page for individual activity to either book or add to favorites:
+![Detail page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/detail.png?raw=true)
 
-Confirmation page for booking:
-![confirmation](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/confirmation.png?raw=true)
+### Confirmation page for booking:
+![Confirmation page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/confirmation.png?raw=true)
 
-Booking page: users can add activities or delete activities from this page:
-![booking](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/bookings.png?raw=true)
+### Booking page to view list of booked activities:
+![Booking page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/bookings.png?raw=true)
 
-Favorite page: users can go to detail page for individual acitvity or book each activity from this page:
-![favorite](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/favorite.png?raw=true)
+### Favorite page to view list of activities added to favorites:
+![Favorite page](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/favorite.png?raw=true)
 
 
 ## Setup
@@ -49,14 +49,14 @@ You need **TWO** terminals for this project.
 
 3.  In the other terminal, `cd` into `client`. Run `npm install`. Environment variables should be created in file called `.env`. Then run `npm start` and go to `localhost:3000` in your browser.
 
-4.  In the browser, you'll see the home page of the app with a big background photo of sky view and one hiker on the right.
+4.  In the browser, you will be on the home page of ActivityGO.
 
 ## Dependencies:
 
 * Ruby 2.6.2 +
 * Rails 5.2.2.1 +
 * React
-* Axiox
+* Axios
 * React Router
 * React Bootstrap
 * Active_Model_serializer
