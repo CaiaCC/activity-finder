@@ -28,8 +28,8 @@ export default function useBookingData() {
 
   function cancelBooking(bookingId) {
     return axios.delete(`/api/users/1/bookings/${bookingId}`)
-    .then(res => console.log('Sent delete booking request'))
     .then(() => getBookedActivities())
+    .then(res => console.log('Sent delete booking request'))
     .catch(err => console.log('Err form delete booking request: ', err))
   }
   
@@ -45,9 +45,9 @@ export default function useBookingData() {
       }
   
       return axios.post('/api/users/1/bookings', newBooking)
+      .then(getBookings())
+      .then(getBookedActivities())
       .then(res => console.log('Sent post booking request'))
-      .then(() => getBookings())
-      .then(() => getBookedActivities())
       .catch(err => console.log('Err form post booking request: ', err))
     }
 
