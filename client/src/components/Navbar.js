@@ -29,7 +29,7 @@ export default function NavigBar() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as: <a href="#login">John Doe</a>
+            Signed in as: <a href="#login">Jenny Citherlet</a>
           </Navbar.Text>
           <Button variant="info">Sign Out</Button>{' '}
         </Navbar.Collapse>
