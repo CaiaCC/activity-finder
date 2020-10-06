@@ -256,7 +256,7 @@ Activity.create!({
   address: '7533 Albani Road, North Vancouver, 1B7 8M4',
   price_per_person: 22,
   max_number_of_participants: 10,
-  date: "07/07/20",
+  date: "07/07/2020",
 })
 
 Activity.create!({
