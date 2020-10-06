@@ -9,7 +9,6 @@ import Activity from "./Activity"
 import Banner from './Banner'
 
 function Activities(props) {
-
   const [state, setState] = useState( "Let's explore!" )
   const [activities, setActivities] = useState([])
   const [city, setCity] = useState("Choose Your City")
