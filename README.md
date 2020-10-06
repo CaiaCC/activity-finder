@@ -1,86 +1,76 @@
-## NOTE: This repo has not been updated in a while.
+# Activity Finder:
 
-You may find that the versions of React, Rails, and Ruby are _NOT_ the most current. Feel free to update this repo and make a PR with new versions. Also, please let me know if you run into any bugs.
+This app is for people to search available activities nearby by typing in their cities and ideal budgets. Users are able to book/delete activites from searched activities or save activites for later booking(s).
 
-# React + Rails No-Fluff Boilerplate
+## Stacks:
 
-A boilerplate project for anyone interested in making a project that uses React and Rails.
+This project uses `Ruby on Rails` as back-end, and `React` as front-end.
 
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff.
+The back-ends are stored in `app` folder, which has models, serializers, controllers for different resources. 
 
-The main important bit is that the React project has `proxy` set to `localhost:3001` in the `package.json` file. Take a look!
+The database is stored in `db` folder, which contains migrate files, schema file, and seeds file.
 
-## Hall of Fame
+The front-ends are located in `client` folder, which contains component and css files.
 
-Here are some projects that have been built using this boilerplate.
+The front-end of this app has `proxy` set to `localhost:3001` as well as dependencies in the `package.json` file. For back-end, the dependencies are stored in `Gemfile`.
 
-- [latercart](https://github.com/bonitac/latercart)
-- [Cards-Against-the-Internet](https://github.com/csx773/Cards-Against-the-Internet)
-- [Jetify](https://github.com/shadeying/Jetify)
-- [watchpoll](https://github.com/grey275/watchpoll)
-- [StartDuck](https://github.com/JerChuang/StartDuck)
-- [Change-App](https://github.com/ZHShang/Change-App)
+## Final products:
 
-## Using the boilerplate
+Home page with welcoming text and dropdowns for search:
+![home](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home.png?raw=true)
 
-First, fork this boilerplate so you get your own copy of it. Once you have done that, you can clone your new repo to your machine, and get started.
+Searched activities lists given city and budgets:
+![home-search](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/home-search.png?raw=true)
+
+Detail pages for individual activity to either book or add to favorites:
+![detail](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/detail.png?raw=true)
+
+Confirmation page for booking:
+![confirmation](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/confirmation.png?raw=true)
+
+Booking page: users can add activities or delete activities from this page:
+![booking](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/bookings.png?raw=true)
+
+Favorite page: users can go to detail page for individual acitvity or book each activity from this page:
+![favorite](https://github.com/97-Jeffrey/activity-finder/blob/readme-update/docs/favorite.png?raw=true)
+
+
+## Start the project:
+
+ Fork the repo, so you get your own copy of it. Then clone the new repo to your local machine.
 
 You need **TWO** terminals for this.
 
 In one terminal, run `bundle` to install the dependencies. Run `bin/rake db:setup` to create the databases (called rails_project_development by default). Run `bin/rails s` to run the server.
 
-In the other terminal, `cd` into `client`. Run `npm install`. Rename the `.env.example` file to be called `.env`. Then run `npm start` and go to `localhost:3000` in your browser.
+In the other terminal, `cd` into `client`. Run `npm install`. Environment variables should be created in file called `.env`. Then run `npm start` and go to `localhost:3000` in your browser.
 
-In the browser, you can click on the button and see the data get loaded.
+In the browser, you'll see the home page of the app with a big background photo of sky view and one hiker on the right.
 
-If this doesn't work, please message me!
+## Dependencies:
 
-## Next steps
+To install dependencies for Ruby on Rails, run `bundle install`.
 
-From here, you can start working on your project!
+To install dependencies for React,
+ run `npm install`.
 
-On the Rails side, you may make new `resources` routes in your `routes.rb` file, e.g. :
+dependencies:
 
-```rb
-namespace :api do
-  resources :dogs # to generate GET /api/dogs, POST /api/dogs, etc...
-end
-```
+* Ruby 2.6.2 +
+* Rails 5.2.2.1 +
+* React
+* Axois
+* React Router
+* React Bootstrap
+* Active_Model_serializer
 
-Then you can make your various controllers, models, migrations, etc. as you need! The one funky thing is that instead of rendering an HTML view you'll be rendering JSON. [You can return anything from a Rails controller as JSON like this.](https://guides.rubyonrails.org/v5.2/layouts_and_rendering.html#rendering-json) See the example in my "tests_controller".
 
-On the React side, the important bit is that you make you make your AJAXy HTTP requests using something like `axios` or `superagent`. I've set this up to use `axios` already. Check the React code to see an example request being made on-click to the Rails server! You can make your HTTP requests to `/api/anything/you/want`, as long as the route exists on your Rails app.
+## Collaborators:
 
-**NOTE:** I recommend that you namespace all your routes under `api` on the Rails side! Look at how I've done that in the `routes.rb` file, and also how the `tests_controller` is written as:
+* Jeffrey Shao: https://github.com/97-Jeffrey
 
-```rb
-class Api::TestsController < ApplicationController
-```
+* Caia Chuang: https://github.com/CaiaCC
 
-and it lives in the `api` folder! Put all your controllers in there!
+* Jenny Citherlet: https://github.com/JennyC2020
 
-## Deployment to Heroku
 
-This boilerplate is _almost_ all set up to deal with deploying to Heroku. If you have the Heroku CLI tools installed you can run `heroku create` to create the Heroku project.
-
-Then we must run two commands to tell Heroku to first build our React app, and _then_ build the Rails app.
-
-1. `heroku buildpacks:add heroku/nodejs --index 1`
-2. `heroku buildpacks:add heroku/ruby --index 2`
-
-Once you've done that, you can run `git push heroku master` to deploy your project any time you want! Note, however, that deploying to Heroku can be a _little_ slow since Heroku needs to build your React app. Just give it some time.
-
-Once it's deployed, you can run the following commands to manage your app:
-
-- `heroku run rake db:schema:load` to set up your database the first time
-- `heroku run rake db:migrate` for any additional migrations
-- `heroku run rake db:seed` for seeds
-- `heroku run rake db:rollback` to rollback a migration
-
-There are other commands, but these are good to get you started!
-
-To make your app work properly with React Router (if you end up using it) on Heroku, I've added a special route to the `routes.rb` file (`get '*path' ... `).
-
-## Contact
-
-Please contact me at `nima@lighthouselabs.com` if you have any questions or requests, or post an issue to this repo.
