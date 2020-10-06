@@ -45,7 +45,7 @@ export default function useFavoriteData() {
 
       return axios.post('/api/users/1/favorites', newFavorite)
       .then(res => console.log('Sent post favorite request'))
-      .then(getFavorites())
+      .then(() => getFavorites())
       .then(() => getFavoredActivities())
       .catch(err => console.log('Err form post favorite request: ', err))
     }

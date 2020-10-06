@@ -36,10 +36,7 @@ function Activity(props) {
   // console.log(activity)
   
   const spots = spotsRemaining(activity);
-  const {bookings, favorites, date} = activity;
-  const dateUS = new Date(date);
-  console.log(dateUS)
-  // const formatedDate = new Intl.DateTimeFormat('en-US').format(dateUS);
+  const {bookings, favorites} = activity;
 
   const isBooked = (bookings) => {
     if (Array.isArray(bookings)) {

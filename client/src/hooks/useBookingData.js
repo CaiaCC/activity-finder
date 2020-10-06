@@ -46,7 +46,7 @@ export default function useBookingData() {
   
       return axios.post('/api/users/1/bookings', newBooking)
       .then(res => console.log('Sent post booking request'))
-      .then(getBookings())
+      .then(() => getBookings())
       .then(() => getBookedActivities())
       .catch(err => console.log('Err form post booking request: ', err))
     }
