@@ -12,7 +12,7 @@ export default function FavoriteItems(props) {
 	const favoredItems = favoredActivities.map((favoredActivity, index) => {
     const today = new Date();
     const date = new Date(favoredActivity.date);
-    const formatedDate = new Intl.DateTimeFormat('en-US').format(date);
+    const formatedDate = date.toLocaleDateString();
 
     const favoredActivityId = favoredActivity.id
     const favoriteId = favorites.filter(obj => obj.activity_id === favoredActivityId)[0].id
@@ -24,15 +24,6 @@ export default function FavoriteItems(props) {
       .then(res => console.log("favorite cancelled"))
 			.catch(err => console.log("favorite cancel err: ", err))
     }
-
-    // function getDate(){
-    //   let today = new Date();
-    //   let dd = String(today.getDate()).padStart(2, '0');
-    //   let mm = String(today.getMonth() + 1).padStart(2, '0');
-    //   let yyyy = today.getFullYear();
-    //   let currentDate = yyyy + '-' + mm + '-' + dd
-    //   return currentDate
-    // }
 
     return (
       <tr key={index}>

@@ -36,8 +36,10 @@ function Activity(props) {
   // console.log(activity)
   
   const spots = spotsRemaining(activity);
-  const {bookings, favorites} = activity;
-
+  const {bookings, favorites, date} = activity;
+  const newDate = new Date (date);
+  const formatedDate = newDate.toLocaleDateString();
+ 
   const isBooked = (bookings) => {
     if (Array.isArray(bookings)) {
       if (bookings.length === 0) {
@@ -79,7 +81,7 @@ function Activity(props) {
           <Col>
             <div className='info'>
               <h1>{activity.title}</h1>
-              <div className='date'>Date: {activity.date}</div>
+              <div className='date'>Date: {formatedDate}</div>
             </div>
             <div className='spots'>
               Spots remaining:  <Badge color='info'>{spots}</Badge>
