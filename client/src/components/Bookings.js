@@ -24,12 +24,12 @@ export default function Bookings(props) {
   const bookedItems = bookedActivities.map((bookedActivity, index) => {
     const today = new Date();
     const date = new Date(bookedActivity.date);
-    const formatedDate = new Intl.DateTimeFormat('en-US').format(date);
+    const formatedDate = date.toLocaleDateString();
 
-    const bookedActivityId = bookedActivity.id
-    const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0]
-    const spotReserved = booking.number_of_participants 
-    const bookingId = booking.id
+    const bookedActivityId = bookedActivity.id;
+    const booking = bookings.filter(obj => obj.activity_id === bookedActivityId)[0];
+    const spotReserved = booking.number_of_participants ;
+    const bookingId = booking.id;
     
     const destroy = (bookingId) => {
       return cancelBooking(bookingId)
@@ -37,16 +37,6 @@ export default function Bookings(props) {
       .catch(err => console.log("booking cancel err: ", err))
     }
 
-    // function getDate(){
-    //   let today = new Date();
-    //   let dd = String(today.getDate()).padStart(2, '0');
-    //   let mm = String(today.getMonth() + 1).padStart(2, '0');
-    //   let yyyy = today.getFullYear();
-    //   let currentDate = yyyy + '-' + mm + '-' + dd
-    //   return currentDate
-    // }
-
-    
     return (
       <tr key={index}>
         <td>{bookedActivity.title}</td>
