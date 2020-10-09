@@ -1,5 +1,5 @@
-# "ActivityGo" — Final Project(Lighthouse Labs Web Development Bootcamp)
-### Main Contributors(ordered by last name): [Caia Chuang](https://github.com/CaiaCC), [Jenny Citherlet](https://github.com/JennyC2020), [Jeffrey Shao](https://github.com/97-Jeffrey)
+# ActivityGO — Final Project of Lighthouse Labs Web Development Bootcamp
+### Main Contributors(order by last name): [Caia Chuang](https://github.com/CaiaCC), [Jenny Citherlet](https://github.com/JennyC2020), [Jeffrey Shao](https://github.com/97-Jeffrey)
 
 ## OverView
 AcitivityGO was created to help users find activities within a selected area and budget. Users can select an activity from the list to view more details such as price, date and number of spots available. The listed activities can be added to their favorites for future reference or booked immediately.
